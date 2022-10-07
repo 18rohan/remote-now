@@ -2,9 +2,14 @@ import React from 'react'
 import { Box } from '@mui/system'
 import { Typography } from '@mui/material'
 import {CustomButton} from '../../components';
-const HeroSection = () => {
+interface Props {
+    image:string;
+}
+const HeroSection = ({image}:Props) => {
   return (
+    <>
     <Box sx={{backgroundColor:'#B6E0CC'}} marginTop="50px" marginBottom="40px" padding="25px" minHeight="90vh" display="flex"  alignItems="center">
+        <Box display="flex" width="100%" flexDirection="row" justifyContent="space-around">
     <Box width="55%" >
         <Typography variant='h1' color="black" fontWeight="500">It has never been easier to hire perfect employee</Typography>
         <Box my="20px">
@@ -15,7 +20,12 @@ const HeroSection = () => {
         <CustomButton  label="Get Started" bgColor='black' textColor='white' border='2px solid black' shadow="4"/>
         </Box>
     </Box>
+    <Box width="30%" height="500px">
+        <img src={image} alt="albert einstein with tongue sticking out" style={{width:"100%", height:"100%", borderRadius:'45%'}}/>
     </Box>
+    </Box>
+    </Box>
+    </>
   )
 }
 
