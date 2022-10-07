@@ -15,7 +15,7 @@ const style = {
 };
 
 interface Props {
-  children?: JSX.Element,
+  children?: any,
 
 }
 const Section: FC<Props | GridProps> = ({ children, ...props }) => {
