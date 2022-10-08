@@ -1,7 +1,7 @@
 import React from "react";
 import { HeroSection, Navbar, CTACard } from "../../components";
 import { Section } from "../../containers";
-import Albert from "../../assets/albert.jpeg";
+import Albert from "src/assets/albert.jpeg";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 const Home = () => {
@@ -38,6 +38,7 @@ const Home = () => {
         {cardsData.map((card, index) => {
           return (
             <CTACard
+              key={index}
               title={card.title}
               subheading={card.subheading}
               backgroundColor={card.backgroundColor}

@@ -15,16 +15,28 @@ function App() {
           <title>Remote Now</title>
         </Helmet>
       </HelmetProvider>
-      <Container disableGutters maxWidth="xl" sx={{ width: "100%" }}>
-      <Navbar />
+      <>
+      {/* <Navbar /> */}
         <Suspense>
           <Routes />
         </Suspense>
         
         
-      </Container>
+      </>
     </>
   );
 }
 
 export default App;
+
+
+// Features to implement
+
+// - Login/Signup using mobile number/OTP (firebase) and Email/password
+// - Candidates should be able to login & apply to job posts
+// - Recruiters should be able to login & create new job posts
+// - Signup form for Recruiters and Candidates
+// - Fetching data from third party APIs using react-query
+// - Render as you fetch, or infinite scrolling for all the jobs posts
+
+

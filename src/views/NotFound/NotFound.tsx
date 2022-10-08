@@ -3,8 +3,8 @@ import React from "react";
 
 const NotFound = () => {
   return (
-    <Box>
-      <Typography variant="h1">NotFound</Typography>
+    <Box display="flex" justifyContent="center" alignItems="center" width="100%" height="100vh">
+      <Typography variant="h1" color="black">Page Not Found!</Typography>
     </Box>
   );
 };
