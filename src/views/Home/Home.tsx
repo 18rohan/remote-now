@@ -1,7 +1,7 @@
 import React from "react";
 import { HeroSection, Navbar, CTACard } from "../../components";
 import { Section } from "../../containers";
-import Albert from "src/assets/albert.jpeg";
+import Albert from "../../assets/Albert.jpeg";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 const Home = () => {
