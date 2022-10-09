@@ -16,7 +16,7 @@ function App() {
         </Helmet>
       </HelmetProvider>
       <>
-      <Navbar />
+      
         <Suspense>
           <Routes />
         </Suspense>

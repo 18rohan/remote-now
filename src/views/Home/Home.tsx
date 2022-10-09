@@ -4,6 +4,7 @@ import { Section } from "../../containers";
 import Albert from "../../assets/Albert.jpeg";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import {HomeContainer} from '../../containers/';
 const Home = () => {
   const cardsData = [
     {
@@ -32,7 +33,7 @@ const Home = () => {
     },
   ];
   return (
-    <>
+    <HomeContainer>
       <HeroSection image={Albert} />
       <Section display="flex" justifyContent="space-around" flexDirection="row">
         {cardsData.map((card, index) => {
@@ -48,7 +49,7 @@ const Home = () => {
           );
         })}
       </Section>
-    </>
+    </HomeContainer>
   );
 };
 

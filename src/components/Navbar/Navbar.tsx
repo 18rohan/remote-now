@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CustomButton from '../Button/CustomButton';
+import { Link, useNavigate } from 'react-router-dom';
 const pages = ['Home', 'Find jobs', 'Job Alerts', 'Career Advice', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -35,6 +36,10 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  const NavigateLogin = () =>{
+    const navigate = useNavigate();
+    navigate('/');
+  }
   return (
     <AppBar sx={{backgroundColor:'#B6E0CC', borderBottom:'1px solid black'}} elevation={0}>
       <Container maxWidth="xl" >
@@ -127,7 +132,7 @@ const ResponsiveAppBar = () => {
           </Box>
           
           <Box sx={{ display:'flex', flexGrow: 0,   height:'100%', justifyContent:'center', alignItems:'center' }} width="25%" >
-           <CustomButton  label="Login" bgColor='transparent' textColor='black' borderLeft='1px solid black'/>
+           <CustomButton  label="Login" bgColor='transparent' textColor='black' borderLeft='1px solid black' handleOnClick={NavigateLogin}/>
            <CustomButton  label="Try it Free" bgColor='black' textColor='white'/>
             <Menu
               sx={{ mt: '45px' }}

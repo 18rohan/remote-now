@@ -10,11 +10,13 @@ interface Props {
     textColor:string;
     shadow?:string;
     mx?:string;
-    onClick?:()=>void;
+    handleOnClick?:()=>void;
+    type:string;
+    
 }
-const CustomButton = ({label, mx , bgColor, textColor,borderLeft,border, shadow}:Props) => {
+const CustomButton = ({label, mx , bgColor, textColor,borderLeft,border, shadow, handleOnClick}:Props) => {
   return (
-    <Button sx={{backgroundColor:`${bgColor}`, padding:'20px',borderRadius:'0px', border:`${border}`, borderLeft:`${borderLeft}`, boxShadow:`${shadow}`, margin:`${mx}` }}  fullWidth >
+    <Button onClick={handleOnClick} sx={{backgroundColor:`${bgColor}`, padding:'20px',borderRadius:'0px', border:`${border}`, borderLeft:`${borderLeft}`, boxShadow:`${shadow}`, margin:`${mx}` }}  fullWidth >
         <Typography fontWeight="bold" textTransform="capitalize" color={`${textColor}`}>{label}</Typography>
     </Button>
   )
