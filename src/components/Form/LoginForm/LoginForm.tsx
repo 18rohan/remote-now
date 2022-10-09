@@ -18,7 +18,7 @@ const LoginForm = () => {
       });
     }
   return (
-    <Box display="flex" width="70%" height="50%" flexDirection="column" justifyContent="center" alignItems="center"  padding="8px">
+    <Box display="flex" width="70%" height="40%" flexDirection="column" justifyContent="center" alignItems="center"  padding="8px">
             <InputField
               FieldName="email"
               label="Email id"

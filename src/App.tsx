@@ -3,7 +3,7 @@ import { Suspense, useState } from "react";
 import "./App.css";
 //Import component
 import { Navbar } from "./components";
-import { Home } from "./views";
+import { Home, Loading } from "./views";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Routes from "./Routes/Routes";
 
@@ -17,7 +17,7 @@ function App() {
       </HelmetProvider>
       <>
       
-        <Suspense>
+        <Suspense fallback={<Loading/>}>
           <Routes />
         </Suspense>
         
