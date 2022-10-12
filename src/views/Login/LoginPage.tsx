@@ -8,7 +8,7 @@ const LoginPage = () => {
       <Grid item  sm={6} height="100vh">
         <Box display="flex" justifyContent="center" alignItems="center" width="100%" height="100%" sx={{backgroundColor:'orange',overflow:'hidden'}}>
           
-          <img src={graphics}   />
+          <img src={graphics}/>
         </Box>
       </Grid>
       <Grid item  sm={6}>

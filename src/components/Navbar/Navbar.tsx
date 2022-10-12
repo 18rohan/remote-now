@@ -132,8 +132,8 @@ const ResponsiveAppBar = () => {
           </Box>
           
           <Box sx={{ display:'flex', flexGrow: 0,   height:'100%', justifyContent:'center', alignItems:'center' }} width="25%" >
-           <CustomButton  label="Login" bgColor='transparent' textColor='black' borderLeft='1px solid black' handleOnClick={NavigateLogin}/>
-           <CustomButton  label="Try it Free" bgColor='black' textColor='white'/>
+           <CustomButton  label={sessionStorage.getItem('Auth Token') ? "Logout" : "Login"} bgColor='transparent' textColor='black' borderLeft='1px solid black' handleOnClick={NavigateLogin} type="button" />
+           <CustomButton  label={sessionStorage.getItem('Auth Token') ? "User" : "Try it Free"} bgColor='black' textColor='white' type="button" link='/user-profile'/>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"

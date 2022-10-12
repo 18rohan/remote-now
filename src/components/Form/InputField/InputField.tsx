@@ -1,5 +1,5 @@
 import * as React from "react";
-import { InputAdornment, TextField } from "@mui/material";
+import { InputAdornment, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Controller } from "react-hook-form";
 import { useFormContext } from "react-hook-form";
@@ -15,6 +15,7 @@ type Fielddata = {
   fieldtype?: string;
   error?: boolean;
   control: any;
+  TopLabel?:string;
 };
 
 const InputField = ({
@@ -25,12 +26,14 @@ const InputField = ({
   control,
   error,
   size,
+  TopLabel,
   ...restProps
 }: Fielddata) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   return (
     <Box width="100%" my={"8px"}>
+      {TopLabel && <Typography variant="subtitle1" fontWeight="bold">{TopLabel}</Typography>}
       <Controller
         name={FieldName}
         defaultValue=""
