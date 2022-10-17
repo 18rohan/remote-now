@@ -16,8 +16,8 @@ const style = {
     container: {
       display:'flex',
       flexDirection:'column',
-      justifyContent:'center',
-      alignItems:'center',
+      width:'100%',
+      
       
       // margin:"40px 0px 30px 0px"
       

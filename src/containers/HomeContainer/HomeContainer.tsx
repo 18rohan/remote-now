@@ -15,7 +15,8 @@ const style = {
 };
 
 interface Props {
-  children?: any,
+  children?: any;
+  backgroundColor?:string;
 
 }
 const HomeContainer: FC<Props | GridProps> = ({ children, ...props }) => {

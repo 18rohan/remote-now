@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import { Outlet, useRoutes } from "react-router-dom";
 import PrivateRoutes from "../utils/PrivateRoutes";
+import ProfileBuilder from "../views/ProfileBuilder";
 import ProfileOverview from "../views/ProfileOverview";
 import UserProfile from "../views/UserProfile";
 // import ROUTES from './AppRoutes'
@@ -21,6 +22,14 @@ const RoutesComponent = () => {
       element: (
         <PrivateRoutes>
           <Home />
+        </PrivateRoutes>
+      ),
+    },
+    {
+      path: "/build-profile",
+      element: (
+        <PrivateRoutes>
+          <ProfileBuilder/>
         </PrivateRoutes>
       ),
     },

@@ -12,11 +12,13 @@ interface Props {
     shadow?:string;
     mx?:string;
     handleOnClick?:()=>void;
-    type:string;
+    type?:string;
     link?:string;
+    fullWidth?:string;
+    width?:string;
     
 }
-const CustomButton = ({label, mx , bgColor, textColor,borderLeft,border, shadow, link,handleOnClick}:Props) => {
+const CustomButton = ({label, mx , bgColor, width,textColor,borderLeft,border, shadow, link,handleOnClick,fullWidth}:Props) => {
   if(link){
     return(<Link to={`${link}`} style={{width:'100%',textDecoration:"none",backgroundColor:`${bgColor}`, padding:'20px',borderRadius:'0px', border:`${border}`, borderLeft:`${borderLeft}`, boxShadow:`${shadow}`, margin:`${mx}`}}>
     <Button onClick={handleOnClick}   fullWidth >
@@ -28,7 +30,7 @@ const CustomButton = ({label, mx , bgColor, textColor,borderLeft,border, shadow,
   return (
     
     
-    <Button onClick={handleOnClick} sx={{backgroundColor:`${bgColor}`, padding:'20px',borderRadius:'0px', border:`${border}`, borderLeft:`${borderLeft}`, boxShadow:`${shadow}`, margin:`${mx}` }}  fullWidth >
+    <Button onClick={handleOnClick}  sx={{width:`${width}`,backgroundColor:`${bgColor}`, padding:'20px',borderRadius:'0px', border:`${border}`, borderLeft:`${borderLeft}`, boxShadow:`${shadow}`, margin:`${mx}` }}  fullWidth={fullWidth ? true : false}>
         <Typography fontWeight="bold" textTransform="capitalize" color={`${textColor}`}>{label}</Typography>
     </Button>
     

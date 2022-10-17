@@ -11,9 +11,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Link } from 'react-router-dom';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import { Link, NavLink } from 'react-router-dom';
+import { basename } from 'path';
 
 const drawerWidth = 240;
 
@@ -49,7 +50,7 @@ export default function ClippedDrawer() {
                   <ListItemIcon>
                     {index % 2 === 0 ? <InboxIcon color="success" /> : <MailIcon  color="success"/>}
                   </ListItemIcon>
-                  <Link to={`${text.toLowerCase()}`} replace> <Typography variant="subtitle1" fontWeight='500' color="black">{text}</Typography></Link>
+                  <Link to={`/user/${text.toLowerCase()}`} replace style={{textDecoration:'none'}}> <Typography variant="subtitle1" fontWeight='500' color="black">{text}</Typography></Link>
                 </ListItemButton>
               </ListItem>
             ))}

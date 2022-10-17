@@ -4,6 +4,7 @@ import React from "react";
 import Sidebar from "../../components/Sidebar";
 
 import UserDetailCard from "../../components/UserProfileComponents/UserDetailsCard";
+import { HomeContainer } from "../../containers";
 import ColumnContainer from "../../containers/ColumnContainer";
 
 const ProfileOverview = () => {
@@ -19,12 +20,12 @@ const ProfileOverview = () => {
       sx={{backgroundColor:'#E5E5E5'}}
     >
       <Sidebar />
-      <ColumnContainer width="80%" backgroundColor="#E5E5E5"  >
+      <HomeContainer width="80%" backgroundColor="#E5E5E5"  >
         {/* <Typography variant="h3" color="black">
           User Profile
         </Typography> */}
         <h1>Profile overview</h1>
-      </ColumnContainer>
+      </HomeContainer>
     </Box>
   );
 };

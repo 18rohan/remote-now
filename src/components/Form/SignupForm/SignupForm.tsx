@@ -5,11 +5,15 @@ import InputField from '../../../components/Form/InputField'
 import {useForm} from 'react-hook-form';
 import { FormButton } from '../../../components';
 import { AuthenticationServices } from '../../../services';
+import { useNavigate } from 'react-router';
 
 const SignupForm = () => {
     const {register, control, handleSubmit, formState:{errors}} = useForm();
+    const navigate = useNavigate();
     const onSubmit = (data:any) => {
-     AuthenticationServices.signUpUser({"email":data.emailId,"password":data.password});
+     AuthenticationServices.signUpUser({"email":data.emailId,"password":data.password})
+     .then((res)=>navigate('/build-profile'))
+     .catch((err)=>console.log(err));
     }
   return (
     <Box display="flex" width="70%" height="50%" flexDirection="column" justifyContent="flex-start" alignItems="center"  padding="8px">

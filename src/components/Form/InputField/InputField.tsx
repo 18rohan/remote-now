@@ -16,6 +16,8 @@ type Fielddata = {
   error?: boolean;
   control: any;
   TopLabel?:string;
+  TopLabelColor?:string;
+  fontWeight?:string;
 };
 
 const InputField = ({
@@ -27,13 +29,14 @@ const InputField = ({
   error,
   size,
   TopLabel,
+  TopLabelColor,
   ...restProps
 }: Fielddata) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   return (
     <Box width="100%" my={"8px"}>
-      {TopLabel && <Typography variant="subtitle1" fontWeight="bold">{TopLabel}</Typography>}
+      {TopLabel && <Typography variant="subtitle1" fontWeight={restProps.fontWeight ? restProps.fontWeight : '600'} color={TopLabelColor ? TopLabelColor : 'black'}>{TopLabel}</Typography>}
       <Controller
         name={FieldName}
         defaultValue=""
