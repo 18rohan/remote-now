@@ -16,12 +16,12 @@ const ContactDetails = () => {
         sx={{ marginBottom: "20px", display: "flex", justifyContent: "center" }}
       >
         
-        <Grid item sm={10}>
+        <Grid item sm={10} xs={12}>
         <Typography variant="h2" color="black">
           Contact Details
         </Typography>
           <InputField
-            label="email@website.com"
+            label="https://email@website.com"
             FieldName="name"
             variant="outlined"
             fullWidth
@@ -29,7 +29,7 @@ const ContactDetails = () => {
             TopLabel="Enter your email id*"
             size="medium"
           />
-          <InputField
+          {/* <InputField
             label="https://www.website.com"
             FieldName="website"
             variant="outlined"
@@ -37,7 +37,7 @@ const ContactDetails = () => {
             TopLabel="Website"
             control={control}
             size="medium"
-          />
+          /> */}
           <InputField
             label="https://linkedin.com/in/username"
             FieldName="linkedIn_id"

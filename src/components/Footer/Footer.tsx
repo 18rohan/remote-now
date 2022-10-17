@@ -2,7 +2,12 @@ import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import { Section } from "../../containers";
 import CenterBox from "../../containers/CenterBox";
-import {AiFillLinkedin,AiFillGithub,AiOutlineTwitter,AiFillInstagram} from 'react-icons/ai';
+import {
+  AiFillLinkedin,
+  AiFillGithub,
+  AiOutlineTwitter,
+  AiFillInstagram,
+} from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -28,21 +33,22 @@ const Footer = () => {
             justifyContent="space-around"
             flexDirection="row"
             alignItems="center"
-            width="20%"
+            width="40%"
             padding="20px"
           >
-            
-              <Typography fontWeight="600" color="#E5E5E5" variant="subtitle1">Home</Typography>
-            
-            
-            <Typography  fontWeight="600" variant="subtitle1" color="#E5E5E5">Recruiter Login</Typography>
-            
-            
-            <Typography fontWeight="600" variant="subtitle1" color="#E5E5E5">Jobs</Typography>
-            
-            
-            
-            
+            <Typography fontWeight="300" color="#E5E5E5" variant="subtitle1">
+              Home
+            </Typography>
+
+            <Typography fontWeight="300" variant="subtitle1" color="#E5E5E5">
+              Recruiter Login
+            </Typography>
+            <Typography fontWeight="300" variant="subtitle1" color="#E5E5E5">
+              Recruiter Signup
+            </Typography>
+            <Typography fontWeight="300" variant="subtitle1" color="#E5E5E5">
+              Jobs
+            </Typography>
           </Box>
           <Box
             display="flex"
@@ -53,20 +59,22 @@ const Footer = () => {
             padding="20px"
           >
             <Typography variant="h6" color="black">
-              <AiFillLinkedin size={32} color="#E5E5E5"/>
+              <AiFillLinkedin size={32} color="#E5E5E5" />
             </Typography>
             <Typography variant="h6" color="#E5E5E5">
-              <AiFillGithub size={32}/>
+              <AiFillGithub size={32} />
             </Typography>
             <Typography variant="h6" color="#E5E5E5">
-              <AiOutlineTwitter size={32}/>
+              <AiOutlineTwitter size={32} />
             </Typography>
-            
+
             <Typography variant="h6" color="#E5E5E5">
-            <AiFillInstagram size={32}/>
+              <AiFillInstagram size={32} />
             </Typography>
-            
           </Box>
+          <Typography fontWeight="300" variant="body2" color="#E5E5E5">
+              © 2022 remote-now. All rights reserved.
+            </Typography>
         </Box>
       </CenterBox>
     </Box>

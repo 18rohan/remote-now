@@ -52,7 +52,7 @@ export const QontoStepIconRoot = styled('div')<{ ownerState: { active?: boolean 
       '& .QontoStepIcon-completedIcon': {
         color: 'green',
         zIndex: 1,
-        fontSize: 18,
+        fontSize: 30,
       },
       '& .QontoStepIcon-circle': {
         width: 8,

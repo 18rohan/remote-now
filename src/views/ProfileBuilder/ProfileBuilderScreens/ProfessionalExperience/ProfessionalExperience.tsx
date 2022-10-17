@@ -8,8 +8,8 @@ const ProfessionalExperience = () => {
   const { control } = useForm();
   return (
     <>
-      <Grid container alignItems="center" spacing={1} sx={{marginBottom:'20px',display:'flex', justifyContent:'center',}}>
-        <Grid item sm={10}>
+      <Grid container alignItems="center" spacing={0} sx={{marginBottom:'20px',display:'flex', justifyContent:'center',}}>
+        <Grid item sm={10} xs={12}>
           <Typography variant="h2" color="black">
             Professional Experience
           </Typography>
@@ -23,8 +23,8 @@ const ProfessionalExperience = () => {
             size="medium"
             
           />
-        </Grid>
-        <Grid item sm={10} xs={12}>
+        
+        
           <InputField
             label="Experience(in years)"
             FieldName="name"
@@ -35,8 +35,8 @@ const ProfessionalExperience = () => {
             size="medium"
             
           />
-        </Grid>
-        <Grid item sm={10} xs={12}>
+        
+        
         <InputField
           label="Select role"
           FieldName="website"
@@ -46,8 +46,8 @@ const ProfessionalExperience = () => {
           control={control}
           size="medium"
         />
-        </Grid>
-        <Grid item sm={10} xs={12}>
+        
+        
         <InputField
           label="Write your bio in under 200 words."
           FieldName="twitter_id"
