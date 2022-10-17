@@ -47,6 +47,7 @@ const HeroSection = ({ image }: Props) => {
                 shadow="4"
                 mx="0px 20px 0px 0px"
                 type="button"
+                fullWidth="true"
               />
               <CustomButton
                 label="How it works"
@@ -55,6 +56,7 @@ const HeroSection = ({ image }: Props) => {
                 border="2px solid black"
                 shadow="4"
                 type="button"
+                fullWidth="true"
               />
             </Box>
           </Box>

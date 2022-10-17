@@ -3,11 +3,12 @@ import React from "react";
 import Container from "../../../../containers/Container";
 import { InputField } from "../../../../components";
 import { useForm } from "react-hook-form";
+import ColumnContainer from "../../../../containers/ColumnContainer";
 
 const ContactDetails = () => {
   const { control } = useForm();
   return (
-    <Container>
+    <ColumnContainer>
       <Grid
         container
         alignItems="center"
@@ -66,7 +67,7 @@ const ContactDetails = () => {
           />
         </Grid>
       </Grid>
-    </Container>
+    </ColumnContainer>
   );
 };
 

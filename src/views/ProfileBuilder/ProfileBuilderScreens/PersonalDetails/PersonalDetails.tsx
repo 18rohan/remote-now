@@ -1,14 +1,15 @@
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Container from "../../../../containers/Container";
 import { InputField } from "../../../../components";
 import { useForm } from "react-hook-form";
+import ColumnContainer from "../../../../containers/ColumnContainer";
 const PersonalDetails = () => {
   const { control } = useForm();
   return (
-    <Container>
-      <Grid container alignItems="center" spacing={1} sx={{marginBottom:'20px',display:'flex', justifyContent:'center',}}>
-        <Grid item sm={10}>
+      <ColumnContainer width="100%">
+      <Grid container alignItems="center" spacing={1} sx={{marginBottom:'20px',display:'flex', justifyContent:'center'}}>
+        <Grid item sm={10} xs={12}>
           <Typography variant="h2" color="black">
             Personal Details
           </Typography>
@@ -22,8 +23,8 @@ const PersonalDetails = () => {
             size="medium"
             
           />
-        </Grid>
-        <Grid item sm={10} xs={12}>
+        
+        
           <InputField
             label="Enter location"
             FieldName="name"
@@ -34,8 +35,7 @@ const PersonalDetails = () => {
             size="medium"
             
           />
-        </Grid>
-        <Grid item sm={10} xs={12}>
+        
         <InputField
           label="Related education"
           FieldName="website"
@@ -45,30 +45,6 @@ const PersonalDetails = () => {
           control={control}
           size="medium"
         />
-        </Grid>
-        {/* <Grid item sm={10}>
-        <InputField
-          label="https://linkedin.com/in/username"
-          FieldName="linkedIn_id"
-          variant="outlined"
-          TopLabel="LinkedIn"
-          fullWidth
-          control={control}
-          size="medium"
-        />
-        </Grid> */}
-        {/* <Grid item sm={10}>
-        <InputField
-          label="https://github.com/username"
-          FieldName="github"
-          variant="outlined"
-          control={control}
-          fullWidth
-          TopLabel="Github"
-          size="medium"
-        />
-        </Grid> */}
-        <Grid item sm={10} xs={12}>
         <InputField
           label="Identity"
           FieldName="twitter_id"
@@ -78,10 +54,9 @@ const PersonalDetails = () => {
           control={control}
           size="medium"
         />
-        </Grid>
-       
       </Grid>
-    </Container>
+    </Grid>
+    </ColumnContainer>
   );
 };
 

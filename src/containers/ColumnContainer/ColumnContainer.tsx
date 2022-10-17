@@ -18,13 +18,14 @@ const style = {
       flexDirection:'column',
       justifyContent:'center',
       alignItems:'center',
-      
+      margin:'0px'
       // margin:"40px 0px 30px 0px"
       
     },
   };
   
   return (
+    
     <Container container sx={style.container} {...props}>
         {/* <Navbar/> */}
       {children}

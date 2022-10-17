@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const ProfessionalExperience = () => {
   const { control } = useForm();
   return (
-    <Container>
+    <>
       <Grid container alignItems="center" spacing={1} sx={{marginBottom:'20px',display:'flex', justifyContent:'center',}}>
         <Grid item sm={10}>
           <Typography variant="h2" color="black">
@@ -60,7 +60,7 @@ const ProfessionalExperience = () => {
         </Grid>
        
       </Grid>
-    </Container>
+    </>
   );
 };
 

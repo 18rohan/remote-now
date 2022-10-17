@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Grid";
 import { GridProps } from "@mui/material";
 import { Navbar } from "../../components";
+import Footer from "../../components/Footer";
 const style = {
   container: {
     bgcolor: {
@@ -24,6 +25,7 @@ const HomeContainer: FC<Props | GridProps> = ({ children, ...props }) => {
     <Container container sx={style.container} {...props}>
         <Navbar />
       {children}
+      {/* <Footer/> */}
     </Container>
   );
 };

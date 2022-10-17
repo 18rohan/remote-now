@@ -44,7 +44,7 @@ const CardDetails = ({title, subheading, subheading2, contentText}:CardDetailsPr
 
 interface CardDetailsProps{
   title:string,
-  subheading:string,
+subheading:string,
   subheading2:string,
   content?:string
 }
