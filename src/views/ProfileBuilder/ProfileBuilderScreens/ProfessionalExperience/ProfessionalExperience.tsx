@@ -15,10 +15,10 @@ const ProfessionalExperience = () => {
           </Typography>
           <InputField
             label="Primary role"
-            FieldName="name"
+            FieldName="primary_role"
             variant="outlined"
             fullWidth
-            control={control}
+            
             TopLabel="Select your primary role*"
             size="medium"
             
@@ -27,10 +27,10 @@ const ProfessionalExperience = () => {
         
           <InputField
             label="Experience(in years)"
-            FieldName="name"
+            FieldName="experience"
             variant="outlined"
             fullWidth
-            control={control}
+            
             TopLabel="Years of experience*"
             size="medium"
             
@@ -39,22 +39,22 @@ const ProfessionalExperience = () => {
         
         <InputField
           label="Select role"
-          FieldName="website"
+          FieldName="role"
           variant="outlined"
           fullWidth
           TopLabel="Open to the following roles"
-          control={control}
+          
           size="medium"
         />
         
         
         <InputField
           label="Write your bio in under 200 words."
-          FieldName="twitter_id"
+          FieldName="bio"
           variant="outlined"
           TopLabel="Your bio"
           fullWidth
-          control={control}
+          
           size="medium"
         />
         </Grid>

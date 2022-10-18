@@ -2,10 +2,10 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Container from "../../../../containers/Container";
 import { InputField } from "../../../../components";
-import { useForm } from "react-hook-form";
+import { useForm, useFormContext } from "react-hook-form";
 import ColumnContainer from "../../../../containers/ColumnContainer";
 const PersonalDetails = () => {
-  const { control } = useForm();
+  
   return (
       <ColumnContainer width="100%">
       <Grid container alignItems="center" spacing={1} sx={{marginBottom:'20px',display:'flex', justifyContent:'center'}}>
@@ -18,7 +18,7 @@ const PersonalDetails = () => {
             FieldName="name"
             variant="outlined"
             fullWidth
-            control={control}
+            
             TopLabel="Whats your name?*"
             size="medium"
             
@@ -27,10 +27,10 @@ const PersonalDetails = () => {
         
           <InputField
             label="Enter location"
-            FieldName="name"
+            FieldName="location"
             variant="outlined"
             fullWidth
-            control={control}
+            
             TopLabel="Where are you based?*"
             size="medium"
             
@@ -38,20 +38,20 @@ const PersonalDetails = () => {
         
         <InputField
           label="Related education"
-          FieldName="website"
+          FieldName="education"
           variant="outlined"
           fullWidth
           TopLabel="Education"
-          control={control}
+          
           size="medium"
         />
         <InputField
           label="Identity"
-          FieldName="twitter_id"
+          FieldName="pronouns"
           variant="outlined"
           TopLabel="What are your pronouns?"
           fullWidth
-          control={control}
+          
           size="medium"
         />
       </Grid>

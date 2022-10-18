@@ -36,7 +36,7 @@ const LoginForm = () => {
               control={control}
               fullWidth
             />
-            <FormButton bgColor='black' label='Sign In' textColor='white' type="submit" handleOnClick={handleSubmit(onSubmit)} />
+            <FormButton bgColor='black' label='Sign In' textColor='white'  handleOnClick={handleSubmit(onSubmit)} fullWidth="true"/>
             <Typography color="black" fontWeight="500">Have an account?<span style={{color:'blue', fontWeight:'bold'}}>Sign In</span></Typography>
     </Box>
   )

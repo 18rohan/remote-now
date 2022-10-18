@@ -14,7 +14,7 @@ type Fielddata = {
   endadornment?: string;
   fieldtype?: string;
   error?: boolean;
-  control: any;
+  control?: any;
   TopLabel?:string;
   TopLabelColor?:string;
   fontWeight?:string;

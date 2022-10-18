@@ -22,10 +22,10 @@ const ContactDetails = () => {
         </Typography>
           <InputField
             label="https://email@website.com"
-            FieldName="name"
+            FieldName="email"
             variant="outlined"
             fullWidth
-            control={control}
+            
             TopLabel="Enter your email id*"
             size="medium"
           />
@@ -40,18 +40,18 @@ const ContactDetails = () => {
           /> */}
           <InputField
             label="https://linkedin.com/in/username"
-            FieldName="linkedIn_id"
+            FieldName="linkedin_id"
             variant="outlined"
             TopLabel="LinkedIn"
             fullWidth
-            control={control}
+            
             size="medium"
           />
           <InputField
             label="https://github.com/username"
             FieldName="github"
             variant="outlined"
-            control={control}
+            
             fullWidth
             TopLabel="Github"
             size="medium"
@@ -62,7 +62,7 @@ const ContactDetails = () => {
             variant="outlined"
             TopLabel="Twitter"
             fullWidth
-            control={control}
+            
             size="medium"
           />
         </Grid>

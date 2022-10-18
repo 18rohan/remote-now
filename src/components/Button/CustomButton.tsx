@@ -11,8 +11,8 @@ interface Props {
   textColor: string;
   shadow?: string;
   mx?: string;
-  handleOnClick?: () => void;
-  type?: string;
+  handleOnClick?: (data:any) => void;
+  
   link?: string;
   fullWidth?: string;
   width?: string;
@@ -29,6 +29,7 @@ const CustomButton = ({
   link,
   handleOnClick,
   fullWidth,
+  
 }: Props) => {
   if (link) {
     return (
@@ -59,9 +60,11 @@ const CustomButton = ({
       </Link>
     );
   } else {
+    console.log("Handle Click: ",handleOnClick)
     return (
       <Button
         onClick={handleOnClick}
+        
         sx={{
           width: `${width}`,
           backgroundColor: `${bgColor}`,
