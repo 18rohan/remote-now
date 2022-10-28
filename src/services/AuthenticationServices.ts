@@ -8,13 +8,14 @@ import {
   signOut
 } from "firebase/auth";
 import {User, UserCredential} from 'firebase/auth';
+
 interface user {
   email:string;
   uid:string;
   name:string;
 
 }
-
+import storage from 'redux-persist/lib/storage';
 const AuthenticationServices = {  
   signInUser: async (data: { email: string; password: string }) => {
     try{
@@ -39,7 +40,7 @@ const AuthenticationServices = {
   },
   signOutUser:async()=>{
     signOut(auth)
-    .then(()=>{sessionStorage.removeItem('Auth Token')})
+    // .then(()=>{n})
     .catch((error:any)=>console.log(error))
   }
 };

@@ -9,7 +9,6 @@ const PrivateRoutes = ({ children, ...props }: { children: JSX.Element }) => {
   const location = useLocation();
   if (user || checkAuth) {
     <Component {...props}/>
-    
   } else{
     return <Navigate to="/" state={{ from: location }} replace />;
   }

@@ -95,7 +95,7 @@ const ProfileBuilder = () => {
     twitter_id:data.twitter_id,
 
 
-  }).then((res)=>navigate('/user/profile'))
+  }).then((res)=>navigate('/user/profile',{replace:true}))
   .catch((err)=>console.log(err));
   alert(JSON.stringify(data));
   // // NextStep(currentStep);

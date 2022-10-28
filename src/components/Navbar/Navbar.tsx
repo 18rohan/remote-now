@@ -15,14 +15,16 @@ import AdbIcon from '@mui/icons-material/Adb';
 import CustomButton from '../Button/CustomButton';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthenticationServices } from '../../services';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { logout } from '../../store/UserSlice';
 
 const pages = ['Home', 'Find jobs', 'Job Alerts', 'Career Advice', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((state:RootState)=>state.user);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -42,13 +44,11 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
-  const NavigateLogin = () =>{
-    
-    navigate('/');
-  }
+  
   const NavigateLogout = () =>{
     AuthenticationServices.signOutUser();
-    navigate('/');
+    dispatch(logout());
+    // navigate('/', {replace:true});
   }
   return (
     <AppBar sx={{backgroundColor:'#B6E0CC', borderBottom:'1px solid black'}} elevation={0}>
@@ -142,7 +142,7 @@ const ResponsiveAppBar = () => {
           </Box>
           
           <Box sx={{ display:'flex', flexGrow: 0,   height:'100%', justifyContent:'center', alignItems:'center' }} width="25%" >
-           <CustomButton  label={user !== null ? "Logout" : "Login"} bgColor='transparent' textColor='black' borderLeft='1px solid black' handleOnClick={sessionStorage.getItem('Auth Token') ? NavigateLogout : NavigateLogin}  fullWidth='true'  />
+           <CustomButton  label={user !== null ? "Logout" : "Login"} bgColor='transparent' textColor='black' borderLeft='1px solid black' handleOnClick={NavigateLogout}  fullWidth='true'  />
            <CustomButton  label={user !== null ? "User" : "Try it Free"} bgColor='black' textColor='white'  link='/user/profile' fullWidth='true'/>
             <Menu
               sx={{ mt: '45px' }}
@@ -174,3 +174,4 @@ const ResponsiveAppBar = () => {
   );
 };
 export default ResponsiveAppBar;
+

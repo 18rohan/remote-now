@@ -31,7 +31,7 @@ const SignupForm = () => {
         }
         console.log("Dispatchdata",Dispatchdata)
         dispatch(login(Dispatchdata));
-        navigate('/home');
+        navigate('/home', {replace:true});
     } catch(err){
         return err;
     }
