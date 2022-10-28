@@ -28,9 +28,10 @@ const RoutesComponent = () => {
     {
       path: "/build-profile",
       element: (
-        <PrivateRoutes>
+          <PrivateRoutes>
           <ProfileBuilder/>
-        </PrivateRoutes>
+          </PrivateRoutes>
+        
       ),
     },
     {

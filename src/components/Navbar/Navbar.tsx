@@ -14,10 +14,16 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CustomButton from '../Button/CustomButton';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthenticationServices } from '../../services';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+
 const pages = ['Home', 'Find jobs', 'Job Alerts', 'Career Advice', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
+  const navigate = useNavigate();
+  const user = useSelector((state:RootState)=>state.user);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -37,7 +43,11 @@ const ResponsiveAppBar = () => {
   };
 
   const NavigateLogin = () =>{
-    const navigate = useNavigate();
+    
+    navigate('/');
+  }
+  const NavigateLogout = () =>{
+    AuthenticationServices.signOutUser();
     navigate('/');
   }
   return (
@@ -132,8 +142,8 @@ const ResponsiveAppBar = () => {
           </Box>
           
           <Box sx={{ display:'flex', flexGrow: 0,   height:'100%', justifyContent:'center', alignItems:'center' }} width="25%" >
-           <CustomButton  label={sessionStorage.getItem('Auth Token') ? "Logout" : "Login"} bgColor='transparent' textColor='black' borderLeft='1px solid black' handleOnClick={NavigateLogin} type="button" fullWidth='true' />
-           <CustomButton  label={sessionStorage.getItem('Auth Token') ? "User" : "Try it Free"} bgColor='black' textColor='white' type="button" link='/user/profile' fullWidth='true'/>
+           <CustomButton  label={user !== null ? "Logout" : "Login"} bgColor='transparent' textColor='black' borderLeft='1px solid black' handleOnClick={sessionStorage.getItem('Auth Token') ? NavigateLogout : NavigateLogin}  fullWidth='true'  />
+           <CustomButton  label={user !== null ? "User" : "Try it Free"} bgColor='black' textColor='white'  link='/user/profile' fullWidth='true'/>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"

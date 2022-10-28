@@ -7,22 +7,35 @@ import {
   createUserWithEmailAndPassword,
   signOut
 } from "firebase/auth";
+import {User, UserCredential} from 'firebase/auth';
+interface user {
+  email:string;
+  uid:string;
+  name:string;
 
-const AuthenticationServices = {
+}
+
+const AuthenticationServices = {  
   signInUser: async (data: { email: string; password: string }) => {
-    signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        sessionStorage.setItem("Auth Token", userCredential.user.refreshToken);
-      })
-      .catch((error) => console.log(error));
+    try{
+      const res:UserCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
+      if(res){
+        return res.user;
+      }
+    } catch(err){
+      return err;
+    }
   },
   signUpUser: async (data: { email: string; password: string }) => {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        sessionStorage.setItem("Auth Token", userCredential.user.refreshToken);
-      })
-      .catch((error) => console.log(error));
+    try{
+      const res:UserCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
+      if(res){
+        return res.user;
+      }
+      
+    } catch(err){
+        return err;
+    }
   },
   signOutUser:async()=>{
     signOut(auth)

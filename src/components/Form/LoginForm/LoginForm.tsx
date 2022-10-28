@@ -6,16 +6,37 @@ import {useForm} from 'react-hook-form';
 import { FormButton } from '../../../components';
 import { AuthenticationServices } from '../../../services';
 import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { User, UserCredential } from 'firebase/auth';
+import { login } from '../../../store/UserSlice';
+
+interface formData {
+  email:string;
+  password:string;
+}
 const LoginForm = () => {
     const navigate = useNavigate();
-    const {register,control, handleSubmit, formState:{errors}} =  useForm();
-    const onSubmit = async(data:any) =>{
+    const dispatch = useDispatch();
+    const {register,control, handleSubmit, formState:{errors}} =  useForm<formData>();
+    const onSubmit = async(data:formData) =>{
       // console.log({"email":data.email,"password":data.password})
-      AuthenticationServices.signInUser({"email":data.email,"password":data.password})
-      .then((res)=>{navigate('/home')})
-      .catch((error)=>{
-        return null;
-      });
+      try {
+          const res:any = await AuthenticationServices.signInUser({"email":data.email,"password":data.password});
+          console.log("Login: ",res);
+          let Dispatchdata = {
+            email: res.email,
+            name:res.email.split('@')[0],
+            lastName:res.email.split('@')[0],
+            uid:res.uid,
+          }
+          console.log("Dispatchdata",Dispatchdata)
+          dispatch(login(Dispatchdata));
+          navigate('/home');
+      } catch(err){
+          return err;
+      }
+      
+     
     }
   return (
     <Box display="flex" width="60%" height="40%" flexDirection="column" justifyContent="center" alignItems="center"  padding="8px">

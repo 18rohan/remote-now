@@ -5,6 +5,7 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { ColorlibConnector, ColorlibStepIcon } from "./StepperForm";
+import { useNavigate } from "react-router";
 import {
   PersonalDetails,
   ProfessionalExperience,
@@ -17,12 +18,13 @@ import { Box } from "@mui/material";
 import { useForm, FormProvider } from "react-hook-form";
 
 
+
 interface Data {
   bio?:string;
   education?:string;
   email?:string;
   experience?:string;
-  github?:string;
+  github_id?:string;
   linkedin_id?:string;
   location?:string;
   name?:string;
@@ -39,6 +41,7 @@ const steps = [
 
 ];
 const ProfileBuilder = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = React.useState<number>(0);
 
   // Handling Form flow
@@ -69,14 +72,12 @@ const ProfileBuilder = () => {
     }
   };
 
-  // Handling Form Submission 
-  const submitForm = (data:any) =>{
-    console.log(data);
-  }
-
+  
   // Creating instance of react-hook-form
   const methods = useForm();
   const { handleSubmit } = methods;
+
+  // Handling form submission
   const onSubmit = async (data: Data) => {
     console.log(data);
     addDoc(collection(db,"users"),{
@@ -90,11 +91,11 @@ const ProfileBuilder = () => {
     bio: data.bio,
     email:data.email,
     linkedin_id:data.linkedin_id,
-    github_id:data.github,
+    github_id:data.github_id,
     twitter_id:data.twitter_id,
 
 
-  }).then((res)=>console.log(res))
+  }).then((res)=>navigate('/user/profile'))
   .catch((err)=>console.log(err));
   alert(JSON.stringify(data));
   // // NextStep(currentStep);

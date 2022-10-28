@@ -49,7 +49,7 @@ const ContactDetails = () => {
           />
           <InputField
             label="https://github.com/username"
-            FieldName="github"
+            FieldName="github_id"
             variant="outlined"
             
             fullWidth

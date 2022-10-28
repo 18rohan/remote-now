@@ -60,7 +60,7 @@ const CustomButton = ({
       </Link>
     );
   } else {
-    console.log("Handle Click: ",handleOnClick)
+    // console.log("Handle Click: ",handleOnClick)
     return (
       <Button
         onClick={handleOnClick}
