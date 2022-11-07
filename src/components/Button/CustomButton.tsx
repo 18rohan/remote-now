@@ -11,7 +11,7 @@ interface Props {
   textColor: string;
   shadow?: string;
   mx?: string;
-  handleOnClick?: (data:any) => void;
+  handleOnClick?: any;
   
   link?: string;
   fullWidth?: string;

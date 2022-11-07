@@ -20,7 +20,7 @@ const ContactDetails = () => {
         <Typography variant="h2" color="black">
           Contact Details
         </Typography>
-          <InputField
+          {/* <InputField
             label="https://email@website.com"
             FieldName="email"
             variant="outlined"
@@ -28,7 +28,7 @@ const ContactDetails = () => {
             
             TopLabel="Enter your email id*"
             size="medium"
-          />
+          /> */}
           {/* <InputField
             label="https://www.website.com"
             FieldName="website"

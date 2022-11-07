@@ -13,7 +13,7 @@ const PersonalDetails = () => {
           <Typography variant="h2" color="black">
             Personal Details
           </Typography>
-          <InputField
+          {/* <InputField
             label="Your name"
             FieldName="name"
             variant="outlined"
@@ -23,7 +23,7 @@ const PersonalDetails = () => {
             size="medium"
             
           />
-        
+         */}
         
           <InputField
             label="Enter location"

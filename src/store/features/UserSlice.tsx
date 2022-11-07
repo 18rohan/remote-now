@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { RootState } from "./store";
+import { RootState } from "../store";
 
 export interface user{
     name:string | null;
@@ -11,7 +11,7 @@ export interface user{
 }
 
 export interface userState {
-    // loading:boolean;
+    loading:boolean;
     user:user | null;
     // userToken:any;
     // error:any;
@@ -19,7 +19,7 @@ export interface userState {
 }
 
 const initialState: userState ={
-    // loading:false,
+    loading:false,
     user:null,
     // userToken:null,
     // error:null,

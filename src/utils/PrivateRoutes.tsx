@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import { useLocation, Navigate } from "react-router-dom";
 import { RootState } from "../store/store";
 const PrivateRoutes = ({ children, ...props }: { children: JSX.Element }) => {
-//   const [checkAuth, setCheckAuth] = useState<boolean>(true);
-  const checkAuth = sessionStorage.getItem('Auth Token');
+
+  // * Getting state from redux store
   const user = useSelector((state:RootState)=>state.user);
   const location = useLocation();
-  if (user || checkAuth) {
+
+  // * Checking if user is logged in
+  if (user) {
     <Component {...props}/>
   } else{
     return <Navigate to="/" state={{ from: location }} replace />;

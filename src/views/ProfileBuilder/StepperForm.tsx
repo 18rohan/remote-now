@@ -70,8 +70,9 @@ export function ColorlibStepIcon(props: StepIconProps) {
 
   const icons: { [index: string]: React.ReactElement } = {
     1: <SettingsIcon />,
-    2: <GroupAddIcon />,
-    3: <VideoLabelIcon />,
+    2: <SettingsIcon />,
+    3: <GroupAddIcon />,
+    4: <VideoLabelIcon />,
   };
 
   return (

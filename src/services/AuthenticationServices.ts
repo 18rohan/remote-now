@@ -7,7 +7,9 @@ import {
   createUserWithEmailAndPassword,
   signOut
 } from "firebase/auth";
+import {doc, getDoc} from 'firebase/firestore';
 import {User, UserCredential} from 'firebase/auth';
+import {db} from '../firebase/firebase-config';
 
 interface user {
   email:string;
@@ -40,8 +42,16 @@ const AuthenticationServices = {
   },
   signOutUser:async()=>{
     signOut(auth)
-    // .then(()=>{n})
     .catch((error:any)=>console.log(error))
+  },
+  getUserData:async(uid:string)=>{
+    const docRef = doc(db, 'users',uid);
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+      return docSnap.data();
+    } else {
+      console.log("No such documents!");
+    }
   }
 };
 export default AuthenticationServices;

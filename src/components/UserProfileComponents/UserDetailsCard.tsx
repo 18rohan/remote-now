@@ -1,16 +1,19 @@
 import { Box, Card, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 import Albert from "../../assets/user-avatar.png";
 import ColumnContainer from "../../containers/ColumnContainer";
+import { AuthenticationServices } from "../../services";
 import InputField from "../Form/InputField";
 import ProfileCardComponent from "../UserProfileComponents/UserProfileCard";
-
+import {RootState} from '../../store/store';
 interface RowProps {
   label: string;
   data: string;
 }
 const InfoRow = ({ label, data }: RowProps) => {
+  
   return (
     <Box
       width="100%"
@@ -33,9 +36,18 @@ const InfoRow = ({ label, data }: RowProps) => {
     </Box>
   );
 };
-
-const UserDetailsCard = () => {
-  const { control } = useForm();
+interface Props {
+  formData:any
+}
+const UserDetailsCard = (props:Props) => {
+  
+  const { control,reset } = useForm();
+  useEffect(()=>{
+    if(props.formData){
+      reset(props.formData);
+    }
+    
+  },[props.formData]);
   return (
     <Grid
       container
@@ -118,7 +130,7 @@ const UserDetailsCard = () => {
         />
         <InputField
           label="https://linkedin.com/in/username"
-          FieldName="linkedIn_id"
+          FieldName="linkedin_id"
           variant="outlined"
           TopLabel="LinkedIn"
           fullWidth
@@ -127,7 +139,7 @@ const UserDetailsCard = () => {
         />
         <InputField
           label="https://github.com/username"
-          FieldName="github"
+          FieldName="github_id"
           variant="outlined"
           control={control}
           fullWidth

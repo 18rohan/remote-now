@@ -12,17 +12,21 @@ import {
   ContactDetails,
 } from "./ProfileBuilderScreens";
 import { db } from "../../firebase/firebase-config";
-import { collection, addDoc } from "firebase/firestore"; 
+import { collection, addDoc,setDoc, doc } from "firebase/firestore"; 
 import { CustomButton } from "../../components";
 import { Box } from "@mui/material";
 import { useForm, FormProvider } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import SignupPage from '../Signup'
+import { AuthenticationServices } from "../../services";
 
 
 
 interface Data {
   bio?:string;
   education?:string;
-  email?:string;
+  email:string;
   experience?:string;
   github_id?:string;
   linkedin_id?:string;
@@ -32,9 +36,17 @@ interface Data {
   pronouns?:string;
   role?:string;
   twitter_id?:string;
+  password:string;
+
+
+}
+interface formData {
+  email:string;
+  password:string;
 
 }
 const steps = [
+  "Sign up",
   "Personal Details",
   "Professional Experience",
   "Contact Details",
@@ -42,6 +54,7 @@ const steps = [
 ];
 const ProfileBuilder = () => {
   const navigate = useNavigate();
+  const user = useSelector((state:RootState)=>state.user?.user);
   const [currentStep, setCurrentStep] = React.useState<number>(0);
 
   // Handling Form flow
@@ -59,14 +72,13 @@ const ProfileBuilder = () => {
   const renderStepContent = (currentStep: number) => {
     switch (currentStep) {
       case 0:
-        return <PersonalDetails />;
-        break;
+        return <SignupPage />
       case 1:
-        return <ProfessionalExperience />;
-        break;
+        return <PersonalDetails />;
       case 2:
+        return <ProfessionalExperience />;
+      case 3:
         return <ContactDetails />;
-        break;
       default:
         break;
     }
@@ -78,9 +90,10 @@ const ProfileBuilder = () => {
   const { handleSubmit } = methods;
 
   // Handling form submission
-  const onSubmit = async (data: Data) => {
-    console.log(data);
-    addDoc(collection(db,"users"),{
+  const onSubmit = async (data: any) => {
+    const res:any = await AuthenticationServices.signUpUser({"email":data?.email,"password":data?.password});
+    console.log("Signup",data);
+    setDoc(doc(db,"users", res.uid),{
     name:data.name,
     location:data.location,
     education:data.education,
@@ -98,7 +111,7 @@ const ProfileBuilder = () => {
   }).then((res)=>navigate('/user/profile',{replace:true}))
   .catch((err)=>console.log(err));
   alert(JSON.stringify(data));
-  // // NextStep(currentStep);
+  
 };
   return (
     <>
@@ -118,7 +131,7 @@ const ProfileBuilder = () => {
         </Stepper>
       </Stack>
       <FormProvider {...methods}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form >
         <Box maxHeight="800px">{renderStepContent(currentStep)}</Box>
         <Box
           display="flex"
@@ -164,7 +177,7 @@ const ProfileBuilder = () => {
                handleOnClick={handleSubmit(onSubmit)}
              />
             )}
-        </Box>
+        </Box> 
         </form>
       </FormProvider>
     </>

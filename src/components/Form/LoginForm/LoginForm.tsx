@@ -8,7 +8,8 @@ import { AuthenticationServices } from '../../../services';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { User, UserCredential } from 'firebase/auth';
-import { login } from '../../../store/UserSlice';
+import { login } from '../../../store/features/UserSlice';
+import { Link } from 'react-router-dom';
 
 interface formData {
   email:string;
@@ -58,7 +59,7 @@ const LoginForm = () => {
               fullWidth
             />
             <FormButton bgColor='black' label='Sign In' textColor='white'  handleOnClick={handleSubmit(onSubmit)} fullWidth="true"/>
-            <Typography color="black" fontWeight="500">Have an account?<span style={{color:'blue', fontWeight:'bold'}}>Sign In</span></Typography>
+            <Typography color="black" fontWeight="500">Dont' have an account?<Link to="/signup" style={{textDecoration:'none'}}><span style={{color:'blue', fontWeight:'bold'}}>Sign Up</span></Link></Typography>
     </Box>
   )
 }
