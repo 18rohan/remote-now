@@ -1,14 +1,16 @@
 import React, { lazy } from "react";
 import { Outlet, useRoutes } from "react-router-dom";
 import PrivateRoutes from "../utils/PrivateRoutes";
-import ProfileBuilder from "../views/ProfileBuilder";
-import ProfileOverview from "../views/ProfileOverview";
-import UserProfile from "../views/UserProfile";
+
 // import ROUTES from './AppRoutes'
 const Login = lazy(() => import("../views/Login"));
 const Signup = lazy(() => import("../views/Signup"));
 const Home = lazy(() => import("../views/Home"));
 const NotFound = lazy(() => import("../views/NotFound"));
+const ProfileOverview = lazy(()=>import("../views/ProfileOverview"));
+const ProfileBuilder = lazy(()=>import("../views/ProfileBuilder"));
+const UserProfile = lazy(()=>import("../views/UserProfile"));
+const Resume = lazy(()=>import('../views/Resume'));
 
 const RoutesComponent = () => {
   const element = useRoutes([
@@ -65,7 +67,16 @@ const RoutesComponent = () => {
               <ProfileOverview/>
             </PrivateRoutes>
           )
+        },
+        {
+          path:'resume',
+          element:(
+            <PrivateRoutes>
+              <Resume/>
+            </PrivateRoutes>
+          )
         }
+
       ]
     },
     {

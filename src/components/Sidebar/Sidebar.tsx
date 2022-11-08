@@ -44,7 +44,7 @@ export default function ClippedDrawer() {
         <Box sx={{ overflow: 'auto' }}>
             
           <List>
-            {['Overview', 'Profile', 'Resume/CV', 'Culture'].map((text, index) => (
+            {['Overview', 'Profile', 'Resume'].map((text, index) => (
               <ListItem key={text} >
                 <ListItemButton>
                   <ListItemIcon>

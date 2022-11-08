@@ -36,7 +36,7 @@ const InputField = ({
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   return (
     <Box width="100%" my={"8px"}>
-      {TopLabel && <Typography variant="subtitle1" fontWeight={restProps.fontWeight ? restProps.fontWeight : '600'} color={TopLabelColor ? TopLabelColor : 'black'}>{TopLabel}</Typography>}
+      {TopLabel && <Typography sx={{marginBottom:'8px'}} variant="subtitle1" fontWeight={restProps.fontWeight ? restProps.fontWeight : '600'} color={TopLabelColor ? TopLabelColor : 'black'}>{TopLabel}</Typography>}
       <Controller
         name={FieldName}
         defaultValue=""

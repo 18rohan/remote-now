@@ -180,39 +180,6 @@ const UserDetailsCard = (props:Props) => {
           subheading2="Jan 2022 to Present"
           content="Data acquisition, structuring and cleaning of the data - Contributed in developing dashboard for live analysis of the data - Performing exploratory and explanatory data analysis - Working with python, pandas, visualisation libraries, dash, jupyter notebook"
         />
-
-        {/* <InputField
-          label="Your name"
-          FieldName="name"
-          variant="outlined"
-          fullWidth
-          control={control}
-          size="medium"
-        />
-        <InputField
-          label="Where are you based"
-          FieldName="location"
-          variant="outlined"
-          fullWidth
-          control={control}
-          size="medium"
-        />
-        <InputField
-          label="Select your primary role"
-          FieldName="role"
-          variant="outlined"
-          control={control}
-          fullWidth
-          size="medium"
-        />
-        <InputField
-          label="Where are you based"
-          FieldName="location"
-          variant="outlined"
-          fullWidth
-          control={control}
-          size="medium"
-        /> */}
       </Grid>
       <Grid item sm={3}>
         <ColumnContainer sx={{ alignItems: "flex-start", padding: "12px" }}>

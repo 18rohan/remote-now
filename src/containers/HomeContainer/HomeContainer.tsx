@@ -5,6 +5,9 @@ import Container from "@mui/material/Grid";
 import { GridProps } from "@mui/material";
 import { Navbar } from "../../components";
 import Footer from "../../components/Footer";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+
 const style = {
   container: {
     bgcolor: {
@@ -21,9 +24,10 @@ interface Props {
 
 }
 const HomeContainer: FC<Props | GridProps> = ({ children, ...props }) => {
+  const user = useSelector((state:RootState ) => state.user);
   return (
     <Container container sx={style.container} {...props}>
-        <Navbar />
+        <Navbar user={user}/>
       {children}
       {/* <Footer/> */}
     </Container>

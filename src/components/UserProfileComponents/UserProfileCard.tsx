@@ -2,14 +2,18 @@ import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
-interface CardDetailsProps{
-    title:string,
-    subheading:string,
-    subheading2:string,
-    contentText?:string
-
+interface CardDetailsProps {
+  title: string;
+  subheading: string;
+  subheading2: string;
+  contentText?: string;
 }
-const CardDetails = ({title, subheading, subheading2, contentText}:CardDetailsProps) => {
+const CardDetails = ({
+  title,
+  subheading,
+  subheading2,
+  contentText,
+}: CardDetailsProps) => {
   return (
     <Box width="100%" padding="12px">
       <Box
@@ -33,22 +37,23 @@ const CardDetails = ({title, subheading, subheading2, contentText}:CardDetailsPr
       <Typography variant="body2" color="gray">
         {subheading2}
       </Typography>
-      {contentText && <Typography>
-        {" "}
-        {contentText}
-      </Typography>}
+      {contentText && <Typography> {contentText}</Typography>}
     </Box>
   );
 };
 
-
-interface CardDetailsProps{
-  title:string,
-subheading:string,
-  subheading2:string,
-  content?:string
+interface CardDetailsProps {
+  title: string;
+  subheading: string;
+  subheading2: string;
+  content?: string;
 }
-const ProfileCardComponent = ({title, subheading, subheading2, content}:CardDetailsProps) => {
+const ProfileCardComponent = ({
+  title,
+  subheading,
+  subheading2,
+  content,
+}: CardDetailsProps) => {
   return (
     <Grid
       container
@@ -61,7 +66,12 @@ const ProfileCardComponent = ({title, subheading, subheading2, content}:CardDeta
         <Box padding="12px">Company logo</Box>
       </Grid>
       <Grid item md={9}>
-        <CardDetails title={title} subheading={subheading} subheading2={subheading2} contentText={content}/>
+        <CardDetails
+          title={title}
+          subheading={subheading}
+          subheading2={subheading2}
+          contentText={content}
+        />
         {/* <CardDetails title="Software Developer" subheading="Stratonik" subheading2="Jan 2022 to Present" /> */}
       </Grid>
     </Grid>

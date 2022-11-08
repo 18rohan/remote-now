@@ -21,11 +21,13 @@ import { logout } from "../../store/features/UserSlice";
 
 const pages = ["Home", "Find jobs", "Job Alerts", "Career Advice", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const ResponsiveAppBar = () => {
+interface Props {
+  user:any;
+}
+const ResponsiveAppBar = ({user}:Props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state: RootState) => state.user);
+  // const user = useSelector((state: RootState) => state.user);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -69,7 +71,7 @@ const ResponsiveAppBar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/home"
             sx={{
               mr: 8,
               display: { xs: "none", md: "flex" },
@@ -181,7 +183,7 @@ const ResponsiveAppBar = () => {
               fullWidth="true"
             />
             <CustomButton
-              label={user !== null ? "User" : "Try it Free"}
+              label={user !== null ? (user && user?.user?.name) : "Try it Free"}
               bgColor="black"
               textColor="white"
               link="/user/profile"

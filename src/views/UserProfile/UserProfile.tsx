@@ -40,7 +40,7 @@ const UserProfile = () => {
       flexDirection="row"
       justifyContent="center"
       alignItems="center"
-      margin="100px 0px 0px 0px"
+      padding="100px 0px 0px 0px"
       sx={{backgroundColor:'#E5E5E5'}}
     >
       <Sidebar />

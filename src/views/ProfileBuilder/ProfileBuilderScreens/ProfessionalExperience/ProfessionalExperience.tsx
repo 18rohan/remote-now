@@ -4,6 +4,7 @@ import Container from "../../../../containers/Container";
 import { InputField } from "../../../../components";
 import { useForm } from "react-hook-form";
 
+
 const ProfessionalExperience = () => {
   const { control } = useForm();
   return (
@@ -47,7 +48,12 @@ const ProfessionalExperience = () => {
           size="medium"
         />
         
-        
+        {/* <TextArea 
+        label="Write your bio in under 200 words."
+        FieldName="bio"
+      
+        />
+        */}
         <InputField
           label="Write your bio in under 200 words."
           FieldName="bio"
