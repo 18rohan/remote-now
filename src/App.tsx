@@ -14,11 +14,11 @@ function App() {
   const user = useSelector((state: RootState) => state.user);
   const navigate = useNavigate();
 
-  React.useEffect(() => {
-    if (user.user === null) {
-      navigate("/", { replace: true });
-    }
-  }, [user]);
+  // React.useEffect(() => {
+  //   if (user.user !== null) {
+  //     navigate("/home", { replace: true });
+  //   }
+  // }, [user]);
   return (
     <>
       <HelmetProvider>

@@ -51,8 +51,13 @@ const ResponsiveAppBar = ({user}:Props) => {
   };
 
   const NavigateLogout = () => {
-    AuthenticationServices.signOutUser();
+    if(user){
+      AuthenticationServices.signOutUser();
     dispatch(logout());
+    } else{
+      navigate('signin/recruiter')
+    }
+    
     
     
   };
@@ -175,7 +180,7 @@ const ResponsiveAppBar = ({user}:Props) => {
             width="25%"
           >
             <CustomButton
-              label={user !== null ? "Logout" : "Login"}
+              label={user !== null ? "Logout" : "Recruiter"}
               bgColor="transparent"
               textColor="black"
               borderLeft="1px solid black"
@@ -183,10 +188,10 @@ const ResponsiveAppBar = ({user}:Props) => {
               fullWidth="true"
             />
             <CustomButton
-              label={user !== null ? (user && user?.user?.name) : "Try it Free"}
+              label={user !== null ? (user?.name) : "Candidates"}
               bgColor="black"
               textColor="white"
-              link="/user/profile"
+              link={user !== null ? "/user/profile" : "signin/candidate"}
               fullWidth="true"
             />
             <Menu

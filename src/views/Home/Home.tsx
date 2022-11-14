@@ -34,7 +34,7 @@ const Home = () => {
   ];
   return (
     <HomeContainer>
-      <HeroSection image={Albert} />
+      <HeroSection image={Albert} heading1="Let's find your next employee!" />
       <Section display="flex" justifyContent="space-around" flexDirection="row">
         {cardsData.map((card, index) => {
           return (

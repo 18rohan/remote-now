@@ -8,7 +8,9 @@ export interface user{
     lastname:string | null;
     email:string | null;
     uid:string | null;
+    isCandidate:boolean;
 }
+
 
 export interface userState {
     loading:boolean;

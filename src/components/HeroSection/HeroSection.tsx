@@ -4,8 +4,9 @@ import { Typography } from "@mui/material";
 import { CustomButton } from "../../components";
 interface Props {
   image: string;
+  heading1:string;
 }
-const HeroSection = ({ image }: Props) => {
+const HeroSection = ({ image, heading1 }: Props) => {
   return (
     <>
       <Box
@@ -23,7 +24,7 @@ const HeroSection = ({ image }: Props) => {
         >
           <Box width="55%">
             <Typography variant="h1" color="black" fontWeight="500">
-              It has never been easier to hire perfect employee
+              {heading1}
             </Typography>
             <Box my="20px">
               <Typography variant="h5" color="black">
@@ -46,7 +47,7 @@ const HeroSection = ({ image }: Props) => {
                 border="2px solid black"
                 shadow="4"
                 mx="0px 20px 0px 0px"
-                type="button"
+                
                 fullWidth="true"
               />
               <CustomButton
@@ -55,7 +56,7 @@ const HeroSection = ({ image }: Props) => {
                 textColor="white"
                 border="2px solid black"
                 shadow="4"
-                type="button"
+                
                 fullWidth="true"
               />
             </Box>
@@ -64,7 +65,7 @@ const HeroSection = ({ image }: Props) => {
             <img
               src={image}
               alt="albert einstein with tongue sticking out"
-              style={{ width: "100%", height: "100%", borderRadius: "45%" }}
+              style={{ width: "100%", borderRadius: "45%" }}
             />
           </Box>
         </Box>

@@ -9,7 +9,7 @@ const PrivateRoutes = ({ children, ...props }: { children: JSX.Element }) => {
   const location = useLocation();
 
   // * Checking if user is logged in
-  if (user) {
+  if (user.user !== null) {
     <Component {...props}/>
   } else{
     return <Navigate to="/" state={{ from: location }} replace />;
@@ -21,3 +21,4 @@ const PrivateRoutes = ({ children, ...props }: { children: JSX.Element }) => {
 export default PrivateRoutes;
 
 
+ 

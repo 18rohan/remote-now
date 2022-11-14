@@ -24,7 +24,7 @@ interface Props {
 
 }
 const HomeContainer: FC<Props | GridProps> = ({ children, ...props }) => {
-  const user = useSelector((state:RootState ) => state.user);
+  const user = useSelector((state:RootState ) => state.user.user);
   return (
     <Container container sx={style.container} {...props}>
         <Navbar user={user}/>

@@ -29,6 +29,7 @@ const LoginForm = () => {
             name:res.email.split('@')[0],
             lastName:res.email.split('@')[0],
             uid:res.uid,
+            isCandidate:res.isCandidate,
           }
           console.log("Dispatchdata",Dispatchdata)
           dispatch(login(Dispatchdata));
@@ -56,10 +57,10 @@ const LoginForm = () => {
               size="medium"
               fieldtype='password'
               control={control}
-              fullWidth
+              fullWidth 
             />
             <FormButton bgColor='black' label='Sign In' textColor='white'  handleOnClick={handleSubmit(onSubmit)} fullWidth="true"/>
-            <Typography color="black" fontWeight="500">Dont' have an account?<Link to="/signup" style={{textDecoration:'none'}}><span style={{color:'blue', fontWeight:'bold'}}>Sign Up</span></Link></Typography>
+            <Typography color="black" fontWeight="500">Dont' have an account?<Link to="/build-profile/recruiter" style={{textDecoration:'none'}}><span style={{color:'blue', fontWeight:'bold'}}>Sign Up</span></Link></Typography>
     </Box>
   )
 }

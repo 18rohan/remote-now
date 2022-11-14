@@ -2,22 +2,37 @@ import React, { lazy } from "react";
 import { Outlet, useRoutes } from "react-router-dom";
 import PrivateRoutes from "../utils/PrivateRoutes";
 
+
 // import ROUTES from './AppRoutes'
-const Login = lazy(() => import("../views/Login"));
-const Signup = lazy(() => import("../views/Signup"));
+const Login = lazy(() => import("../views/Login/CandidateLogin"));
+const RecruiterLogin = lazy(() => import("../views/Login/RecruiterLogin"));
+// const Signup = lazy(() => import("../views/Signup"));
 const Home = lazy(() => import("../views/Home"));
 const NotFound = lazy(() => import("../views/NotFound"));
-const ProfileOverview = lazy(()=>import("../views/ProfileOverview"));
-const ProfileBuilder = lazy(()=>import("../views/ProfileBuilder"));
-const UserProfile = lazy(()=>import("../views/UserProfile"));
-const Resume = lazy(()=>import('../views/Resume'));
+const ProfileOverview = lazy(() => import("../views/ProfileOverview"));
+const ProfileBuilder = lazy(() => import("../views/ProfileBuilder"));
+
+const UserProfile = lazy(() => import("../views/UserProfile"));
+const Resume = lazy(() => import("../views/Resume"));
+const Landing = lazy(() => import("../views/LandingPage"));
+
 
 const RoutesComponent = () => {
   const element = useRoutes([
-    { path: "/", element: <Login /> },
+    { path: "/", element: <Landing /> },
     {
-      path: "/signup",
-      element: <Signup />,
+      path: "/signin",
+      element: <Outlet />,
+      children: [
+        {
+          path: "candidate",
+          element: <Login />,
+        },
+        {
+          path: "recruiter",
+          element: <RecruiterLogin />,
+        },
+      ],
     },
     {
       path: "/home",
@@ -29,12 +44,17 @@ const RoutesComponent = () => {
     },
     {
       path: "/build-profile",
-      element: (
-          <PrivateRoutes>
-          <ProfileBuilder/>
-          </PrivateRoutes>
-        
-      ),
+      element: <Outlet />,
+      children: [
+        {
+          path: "candidate",
+          element: <ProfileBuilder />,
+        },
+        {
+          path: "recruiter",
+          element: <ProfileBuilder />,
+        },
+      ],
     },
     {
       path: "/user",
@@ -43,41 +63,40 @@ const RoutesComponent = () => {
           <Outlet />
         </PrivateRoutes>
       ),
-      children:[
+      children: [
         {
-          path:'',
-          element:(
+          path: "",
+          element: (
             <PrivateRoutes>
-              <ProfileOverview/>
+              <ProfileOverview />
             </PrivateRoutes>
-          )
+          ),
         },
         {
-          path:'profile',
-          element:(
+          path: "profile",
+          element: (
             <PrivateRoutes>
-              <UserProfile/>
+              <UserProfile />
             </PrivateRoutes>
-          )
+          ),
         },
         {
-          path:'overview',
-          element:(
+          path: "overview",
+          element: (
             <PrivateRoutes>
-              <ProfileOverview/>
+              <ProfileOverview />
             </PrivateRoutes>
-          )
+          ),
         },
         {
-          path:'resume',
-          element:(
+          path: "resume",
+          element: (
             <PrivateRoutes>
-              <Resume/>
+              <Resume />
             </PrivateRoutes>
-          )
-        }
-
-      ]
+          ),
+        },
+      ],
     },
     {
       path: "*",

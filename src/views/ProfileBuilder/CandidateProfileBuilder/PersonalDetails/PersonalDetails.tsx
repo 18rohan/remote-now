@@ -4,7 +4,12 @@ import Container from "../../../../containers/Container";
 import { InputField } from "../../../../components";
 import { useForm, useFormContext } from "react-hook-form";
 import ColumnContainer from "../../../../containers/ColumnContainer";
-const PersonalDetails = () => {
+
+interface Props {
+  currentUser:string;
+}
+
+const PersonalDetails = ({currentUser}:Props) => {
   
   return (
       <ColumnContainer width="100%">
@@ -13,17 +18,7 @@ const PersonalDetails = () => {
           <Typography variant="h2" color="black">
             Personal Details
           </Typography>
-          {/* <InputField
-            label="Your name"
-            FieldName="name"
-            variant="outlined"
-            fullWidth
-            
-            TopLabel="Whats your name?*"
-            size="medium"
-            
-          />
-         */}
+          
         
           <InputField
             label="Enter location"

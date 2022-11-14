@@ -18,8 +18,8 @@ interface user {
 
 }
 import storage from 'redux-persist/lib/storage';
-const AuthenticationServices = {  
-  signInUser: async (data: { email: string; password: string }) => {
+const AuthenticationServicesRecruiter = {  
+  signInRecruiter: async (data: { email: string; password: string }) => {
     try{
       const res:UserCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
       if(res){
@@ -29,7 +29,7 @@ const AuthenticationServices = {
       return err;
     }
   },
-  signUpUser: async (data: { email: string; password: string }) => {
+  signUpRecruiter: async (data: { email: string; password: string }) => {
     try{
       const res:UserCredential = await createUserWithEmailAndPassword(auth, data.email, data.password);
       if(res){
@@ -45,7 +45,7 @@ const AuthenticationServices = {
     .catch((error:any)=>console.log(error))
   },
   getUserData:async(uid:string)=>{
-    const docRef = doc(db, 'candidate',uid);
+    const docRef = doc(db, 'recruiter',uid);
     const docSnap = await getDoc(docRef);
     if(docSnap.exists()){
       return docSnap.data();
@@ -54,4 +54,4 @@ const AuthenticationServices = {
     }
   }
 };
-export default AuthenticationServices;
+export default AuthenticationServicesRecruiter;
