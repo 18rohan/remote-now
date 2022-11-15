@@ -10,7 +10,9 @@ const RecruiterLogin = lazy(() => import("../views/Login/RecruiterLogin"));
 const Home = lazy(() => import("../views/Home"));
 const NotFound = lazy(() => import("../views/NotFound"));
 const ProfileOverview = lazy(() => import("../views/ProfileOverview"));
-const ProfileBuilder = lazy(() => import("../views/ProfileBuilder"));
+const newLocal = "../views/ProfileBuilder";
+const ProfileBuilder = lazy(() => import(newLocal));
+
 
 const UserProfile = lazy(() => import("../views/UserProfile"));
 const Resume = lazy(() => import("../views/Resume"));
@@ -44,7 +46,7 @@ const RoutesComponent = () => {
     },
     {
       path: "/build-profile",
-      element: <Outlet />,
+      element: <ProfileBuilder />,
       children: [
         {
           path: "candidate",
