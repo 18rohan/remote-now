@@ -1,5 +1,3 @@
-
-
 import { Suspense, useState } from "react";
 import "./App.css";
 //Import component
@@ -13,9 +11,6 @@ import { RootState } from "./store/store";
 import { theme } from "./theme";
 function App() {
   const user = useSelector((state: RootState) => state.user);
-  const navigate = useNavigate();
-
-
   return (
     <ThemeProvider theme={theme}>
       <HelmetProvider>
