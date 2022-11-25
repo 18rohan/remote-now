@@ -1,7 +1,7 @@
-import { ReactComponentElement } from "react";
 import { HeroSection, Navbar, CTACard } from "../../components";
 import { Section } from "../../containers";
-import {HomeContainer} from '../../containers/';
+import Albert from "../../assets/albert.jpeg";
+import {HomePageContainer} from '../../containers/';
 const Home = () => {
   const cardsData = [
     {
@@ -30,8 +30,8 @@ const Home = () => {
     },
   ];
   return (
-    <HomeContainer width="100%">
-      <HeroSection image={"../../assets/albert.jpeg"} heading1="Let's find your next employee!" />
+    <HomePageContainer width="100%">
+      <HeroSection image={Albert} heading1="Let's find your next employee!" />
       <Section display="flex" justifyContent="space-around" flexDirection="row">
         {cardsData.map((card, index) => {
           return (
@@ -46,7 +46,7 @@ const Home = () => {
           );
         })}
       </Section>
-    </HomeContainer>
+    </HomePageContainer>
   );
 };
 
