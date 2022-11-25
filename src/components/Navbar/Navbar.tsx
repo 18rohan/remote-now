@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
 import CustomButton from "../Button/CustomButton";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthenticationServices } from "../../services";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -72,11 +72,11 @@ const ResponsiveAppBar = ({user}:Props) => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          <Link to="/home" replace>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/home"
             sx={{
               mr: 8,
               display: { xs: "none", md: "flex" },
@@ -87,6 +87,7 @@ const ResponsiveAppBar = ({user}:Props) => {
           >
             remote-now
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
