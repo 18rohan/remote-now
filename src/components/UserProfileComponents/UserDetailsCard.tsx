@@ -1,13 +1,9 @@
-import { Box, Card, Grid, Typography } from "@mui/material";
-import React, { useEffect } from "react";
+import { Box, Grid, Typography } from "@mui/material";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
-import Albert from "../../assets/user-avatar.png";
 import ColumnContainer from "../../containers/ColumnContainer";
-import { AuthenticationServices } from "../../services";
 import InputField from "../Form/InputField";
 import ProfileCardComponent from "../UserProfileComponents/UserProfileCard";
-import {RootState} from '../../store/store';
 interface RowProps {
   label: string;
   data: string;

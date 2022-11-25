@@ -1,5 +1,4 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import userAvatar from "../../../../assets/art2.jpeg";
 const ProfileOverviewCard = () => {
   return (
     <Box
@@ -29,7 +28,7 @@ const ProfileOverviewCard = () => {
             borderRadius="50%"
           >
             <img
-              src={userAvatar}
+              src={"../../../../assets/art2.jpeg"}
               width="100x"
               height="100px"
               style={{ borderRadius: "50%" }}

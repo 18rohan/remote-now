@@ -1,9 +1,6 @@
-import React from "react";
+import { ReactComponentElement } from "react";
 import { HeroSection, Navbar, CTACard } from "../../components";
 import { Section } from "../../containers";
-import Albert from "../../assets/Albert.jpeg";
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import {HomeContainer} from '../../containers/';
 const Home = () => {
   const cardsData = [
@@ -34,7 +31,7 @@ const Home = () => {
   ];
   return (
     <HomeContainer width="100%">
-      <HeroSection image={Albert} heading1="Let's find your next employee!" />
+      <HeroSection image={"../../assets/albert.jpeg"} heading1="Let's find your next employee!" />
       <Section display="flex" justifyContent="space-around" flexDirection="row">
         {cardsData.map((card, index) => {
           return (

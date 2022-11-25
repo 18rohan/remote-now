@@ -4,7 +4,6 @@ import { Suspense, useState } from "react";
 import "./App.css";
 //Import component
 import { ThemeProvider } from "@mui/material/styles";
-
 import { Loading } from "./views";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Routes from "./Routes/Routes";
@@ -16,11 +15,7 @@ function App() {
   const user = useSelector((state: RootState) => state.user);
   const navigate = useNavigate();
 
-  // React.useEffect(() => {
-  //   if (user.user !== null) {
-  //     navigate("/home", { replace: true });
-  //   }
-  // }, [user]);
+
   return (
     <ThemeProvider theme={theme}>
       <HelmetProvider>
