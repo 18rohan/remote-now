@@ -1,1 +1,1 @@
-export {default} from './ProfileBuilder';
+export {default} from './ProfileBuilderForm';
