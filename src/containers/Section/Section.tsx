@@ -9,7 +9,7 @@ const style = {
     bgcolor: {
       xs: "#E5E5E5",
     },
-    margin:"12px 0px 30px 0px"
+    padding:"12px 0px 30px 0px"
     
   },
 };

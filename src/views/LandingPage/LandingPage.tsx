@@ -1,33 +1,60 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { HeroSection, Navbar } from "../../components";
+import { CTACard, HeroSection, Navbar } from "../../components";
 import art from "../../assets/graphics2.png";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import { HomeContainer, HomePageContainer, Section } from "../../containers";
 
 const LandingPage = () => {
   const user = useSelector((state: RootState) => state.user.user);
+
+  const cardsData = [
+    {
+      title: "Apply to humans",
+      subheading:
+        "An employee is someone who gets paid to work for a person or company",
+      backgroundColor: "#B6B1F9",
+      border: "2px solid black",
+      color: "black",
+    },
+    {
+      title: "Instantly stand out",
+      subheading:
+        "An employee is someone who gets paid to work for a person or company",
+      backgroundColor: "#B6E0CC",
+      border: "2px solid black",
+      color: "black",
+    },
+    {
+      title: "Real time feedbacks",
+      subheading:
+        "An employee is someone who gets paid to work for a person or company",
+      backgroundColor: "#F0D0DC",
+      border: "2px solid black",
+      color: "black",
+    },
+  ];
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="flex-start"
-      alignItems="center"
-      width="100%"
-      height="100vh"
-      sx={{ backgroundColor: "black" }}
-    >
+    <HomePageContainer>
+    
       <Navbar user={user} />
       <HeroSection image={art} heading1="It has never been easier to hire perfect employee" />
-      <Typography variant="h3">Landing Page</Typography>
-
-      <Box width="30%" sx={{ backgroundColor: "white" }}>
-        <Typography>Candidates</Typography>
-      </Box>
-      <Box>
-        <Typography>Recruiters</Typography>
-      </Box>
-    </Box>
+      <Section display="flex" justifyContent="space-around" flexDirection="row">
+        {cardsData.map((card, index) => {
+          return (
+            <CTACard
+              key={index}
+              title={card.title}
+              subheading={card.subheading}
+              backgroundColor={card.backgroundColor}
+              border={card.border}
+              color={card.color}
+            />
+          );
+        })}
+      </Section>
+    </HomePageContainer>
   );
 };
 
