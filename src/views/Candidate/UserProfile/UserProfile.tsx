@@ -1,14 +1,14 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../../components/Sidebar";
 
-import UserDetailCard from "../../components/UserProfileComponents/UserDetailsCard";
-import { HomeContainer } from "../../containers";
-import ColumnContainer from "../../containers/ColumnContainer";
+import UserDetailCard from "../../../components/UserProfileComponents/UserDetailsCard";
+import { HomeContainer } from "../../../containers";
+import ColumnContainer from "../../../containers/ColumnContainer";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import { AuthenticationServices } from "../../services";
+import { RootState } from "../../../store/store";
+import { AuthenticationServices } from "../../../services";
 import { useForm } from "react-hook-form";
 
 
@@ -43,9 +43,9 @@ const UserProfile = () => {
       padding="100px 0px 0px 0px"
       sx={{backgroundColor:'#E5E5E5'}}
     >
-      <Sidebar />
+      {/* <Sidebar /> */}
       {userData === null ? (<h1>Loading...</h1>) :(
-      <HomeContainer width="80%" backgroundColor="#E5E5E5"  >
+      <HomeContainer  backgroundColor="#E5E5E5"  >
         {/* <Typography variant="h3" color="black">
           User Profile
         </Typography> */}

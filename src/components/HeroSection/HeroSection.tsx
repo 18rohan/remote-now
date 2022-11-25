@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { CustomButton } from "../../components";
@@ -15,7 +14,7 @@ const HeroSection = ({ image, heading1 }: Props) => {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        
+        width="100%"
       >
         <Box
           display="flex"

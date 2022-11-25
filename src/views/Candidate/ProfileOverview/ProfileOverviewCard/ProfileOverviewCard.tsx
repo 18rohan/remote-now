@@ -1,8 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
-import Sidebar from "../../../components/Sidebar";
-import { HomeContainer } from "../../../containers";
-import userAvatar from "../../../assets/art2.jpeg";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import userAvatar from "../../../../assets/art2.jpeg";
 const ProfileOverviewCard = () => {
   return (
     <Box

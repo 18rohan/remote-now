@@ -13,10 +13,10 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 
 import CustomButton from "../Button/CustomButton";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthenticationServices } from "../../services";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+
 import { logout } from "../../store/features/UserSlice";
 
 const pages = ["Home", "Find jobs", "Job Alerts", "Career Advice", "Contact"];
@@ -126,22 +126,22 @@ const ResponsiveAppBar = ({user}:Props) => {
           </Box>
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
-            href=""
+            href="/home"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+              letterSpacing: ".1rem",
+              color: "black",
+              
             }}
           >
-            LOGO
+            remote-now
           </Typography>
           <Box
             sx={{
@@ -191,7 +191,7 @@ const ResponsiveAppBar = ({user}:Props) => {
               label={user !== null ? (user?.name) : "Candidates"}
               bgColor="black"
               textColor="white"
-              link={user !== null ? "/user/profile" : "signin/candidate"}
+              link={user !== null ? "/candidate/profile" : "signin/candidate"}
               fullWidth="true"
             />
             <Menu

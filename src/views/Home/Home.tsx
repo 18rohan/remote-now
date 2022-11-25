@@ -33,7 +33,7 @@ const Home = () => {
     },
   ];
   return (
-    <HomeContainer>
+    <HomeContainer width="100%">
       <HeroSection image={Albert} heading1="Let's find your next employee!" />
       <Section display="flex" justifyContent="space-around" flexDirection="row">
         {cardsData.map((card, index) => {

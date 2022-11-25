@@ -1,11 +1,13 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
+
 import { AiFillFilePdf } from "react-icons/ai";
 const ResumeCard = () => {
   return (
     <Grid
       container
-      sx={{ backgroundColor: "white" }}
+      columnGap={2}
+      width="100%"
+      sx={{ backgroundColor: "#E5E5E5" }}
       height="100vh"
       paddingTop="20px"
     >
@@ -19,18 +21,18 @@ const ResumeCard = () => {
           </Typography>
         </Box>
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={8}>
         <Box
           display="flex"
           flexDirection="column"
-          justifyContent="space-around"
-          alignItems="flex-start"
+          // justifyContent="space-around"
+          // alignItems="flex-start"
         >
           <Typography variant="subtitle1" fontWeight="bold">
             RohanResume.pdf
           </Typography>
           <Box
-            width="800px"
+            
             height="200px"
             border="1px solid gray"
             display="flex"
@@ -38,7 +40,7 @@ const ResumeCard = () => {
             justifyContent="center"
             alignItems="center"
             borderRadius="20px"
-            sx={{ backgroundColor: "#E5E5E5" }}
+            sx={{ backgroundColor: "white" }}
           >
             <AiFillFilePdf size={40} />
             <Typography variant="h5">Upload pdf</Typography>

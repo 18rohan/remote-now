@@ -50,7 +50,7 @@ export default function ClippedDrawer() {
                   <ListItemIcon>
                     {index % 2 === 0 ? <InboxIcon color="success" /> : <MailIcon  color="success"/>}
                   </ListItemIcon>
-                  <Link to={`/user/${text.toLowerCase()}`} replace style={{textDecoration:'none'}}> <Typography variant="subtitle1" fontWeight='500' color="black">{text}</Typography></Link>
+                  <Link to={`/candidate/${text.toLowerCase()}`} replace style={{textDecoration:'none'}}> <Typography variant="subtitle1" fontWeight='500' color="black">{text}</Typography></Link>
                 </ListItemButton>
               </ListItem>
             ))}

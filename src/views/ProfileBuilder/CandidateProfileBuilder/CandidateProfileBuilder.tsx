@@ -129,7 +129,7 @@ const CandidateProfileBuilder = ({currentUserType}:Props) => {
         isCandidate:data.isCandidate,
     }
     dispatch(login(Dispatchdata));
-    navigate('/user/profile',{replace:true})
+    navigate('/candidate/profile',{replace:true})
 
     // alert(JSON.stringify(data));
   };

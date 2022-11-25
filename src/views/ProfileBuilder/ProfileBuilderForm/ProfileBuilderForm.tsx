@@ -4,18 +4,18 @@ import Stack from "@mui/material/Stack";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import { ColorlibConnector, ColorlibStepIcon } from "./StepperForm/StepperForm";
+import { ColorlibConnector, ColorlibStepIcon } from "../StepperForm/StepperForm";
 import { useLocation, useNavigate } from "react-router";
 import {
   PersonalDetails,
   ProfessionalExperience,
   ContactDetails,
-} from "./CandidateProfileBuilder";
+} from "../CandidateProfileBuilder";
 import { useForm, FormProvider } from "react-hook-form";
-import {RecruiterProfileBuilder} from '../ProfileBuilder/RecruiterProfileBuilder';
-import {CandidateProfileBuilder} from '../ProfileBuilder/CandidateProfileBuilder';
+import {RecruiterProfileBuilder} from '../RecruiterProfileBuilder';
+import {CandidateProfileBuilder} from '../CandidateProfileBuilder';
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 // interface Data {
 //   bio?: string;
 //   education?: string;
@@ -36,7 +36,7 @@ import { RootState } from "../../store/store";
 //   password: string;
 // }
 
-const ProfileBuilder = () => {
+const ProfileBuilderForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const currentUser = useSelector((state:RootState)=>state.user.user);
@@ -70,4 +70,4 @@ const ProfileBuilder = () => {
 
 };
 
-export default ProfileBuilder;
+export default ProfileBuilderForm;

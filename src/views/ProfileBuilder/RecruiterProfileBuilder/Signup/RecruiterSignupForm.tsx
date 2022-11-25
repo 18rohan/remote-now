@@ -2,18 +2,18 @@ import React from 'react'
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import InputField from '../../../../components/Form/InputField';
-import {useForm} from 'react-hook-form';
-// import { FormButton } from '../../../../components/Form/FormButton';
-import { AuthenticationServices } from '../../../../services';
+
+
+
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { login } from '../../../../store/features/UserSlice';
 
-interface formData {
-  email:string;
-  password:string;
 
-}
+// interface formData {
+//   email:string;
+//   password:string;
+
+// }
 
 
 const RecruiterSignupForm = () => {
