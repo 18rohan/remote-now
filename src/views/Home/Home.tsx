@@ -30,9 +30,9 @@ const Home = () => {
     },
   ];
   return (
-    <HomePageContainer width="100%">
+    <HomePageContainer>
       <HeroSection image={Albert} heading1="Let's find your next employee!" />
-      <Section display="flex" justifyContent="space-around" flexDirection="row">
+      <Section display="flex" justifyContent="space-around" flexDirection="row" >
         {cardsData.map((card, index) => {
           return (
             <CTACard

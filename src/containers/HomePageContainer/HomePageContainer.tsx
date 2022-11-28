@@ -25,7 +25,7 @@ const HomePageContainer: FC<Props | GridProps> = ({ children, ...props }) => {
   return (
     <Container container sx={style.container} {...props}>
       <Navbar user={user} />
-        <Box display="flex" flexDirection="column" maxHeight="100vh">
+        <Box display="flex" flexDirection="column" >
         {children}
         </Box>
       {/* <Footer/> */}

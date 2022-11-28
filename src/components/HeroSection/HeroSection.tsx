@@ -1,44 +1,43 @@
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { CustomButton } from "../../components";
+
 interface Props {
   image: string;
-  heading1:string;
+  heading1: string;
 }
 const HeroSection = ({ image, heading1 }: Props) => {
   return (
     <>
-      <Box
-        sx={{ backgroundColor: "#B6E0CC" }}
-        minHeight="100vh"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        width="100%"
-      >
-        <Box
+      <Grid container sx={{ backgroundColor: "#B6E0CC" }} minHeight={{md:"100vh", xs:"95vh"}}>
+        <Grid
+          item
+          sm={8}
+          xs={12}
           display="flex"
-          justifyContent="space-around"
-          
+          justifyContent="center"
+          flexDirection="column"
+          alignItems="center"
+          padding={{xs:'12px'}}
         >
-          <Box width="55%">
-            <Typography variant="h1" color="black" fontWeight="500">
-              {heading1}
+          <Typography variant="h1" color="black">
+            {heading1}
+          </Typography>
+          <Box my="20px">
+            <Typography variant="h5" color="black">
+              An employee is someone who gets paid to work for a person or
+              company. Workers don't need to work full time to be considered
+              employees
             </Typography>
-            <Box my="20px">
-              <Typography variant="h5" color="black">
-                An employee is someone who gets paid to work for a person or
-                company. Workers don't need to work full time to be considered
-                employees
-              </Typography>
-            </Box>
-            <Box
-              width="60%"
-              display="flex"
-              flexDirection="row"
-              justifyContent="space-around"
-              alignItems="space-between"
-            >
+          </Box>
+          <Grid
+            container
+            columnGap={2}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid item xs={5}>
               <CustomButton
                 label="Get Started"
                 bgColor="transparent"
@@ -46,29 +45,35 @@ const HeroSection = ({ image, heading1 }: Props) => {
                 border="2px solid black"
                 shadow="4"
                 mx="0px 20px 0px 0px"
-                
                 fullWidth="true"
               />
+            </Grid>
+            <Grid item xs={5}>
               <CustomButton
                 label="How it works"
                 bgColor="black"
                 textColor="white"
                 border="2px solid black"
                 shadow="4"
-                
                 fullWidth="true"
               />
-            </Box>
-          </Box>
-          <Box width="30%" height="500px">
-            <img
-              src={image}
-              alt="albert einstein with tongue sticking out"
-              style={{ width: "100%", borderRadius: "45%" }}
-            />
-          </Box>
-        </Box>
-      </Box>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          sm={4}
+          display={{xs:'none',md:"flex"}}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <img
+            src={image}
+            alt="albert einstein with tongue sticking out"
+            style={{ width: "100%", borderRadius: "45%" }}
+          />
+        </Grid>
+      </Grid>
     </>
   );
 };

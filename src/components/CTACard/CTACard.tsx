@@ -10,9 +10,9 @@ interface Props {
 }
 const CTACard = ({ title, subheading, backgroundColor, border, color }: Props) => {
   return (
-    <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="center" padding="12px" sx={{ backgroundColor: `${backgroundColor}`, border: `${border}`, boxShadow:"5px 10px black" }} width="300px" height="180px" >
+    <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="center" padding="12px" sx={{ backgroundColor: `${backgroundColor}`, border: `${border}`, boxShadow:"5px 10px black" }} width="300px"  >
       <Box width="100%" marginBottom="12px">
-        <Typography variant="h5" fontWeight="bold" color={`${color}`}>{title}</Typography>
+        <Typography variant="h4" fontWeight="bold" color={`${color}`}>{title}</Typography>
       </Box>
       <Box width="100%" display="flex" justifyContent="space-around" flexDirection="row">
         <Typography variant="h6"fontWeight="500" color={`${color}`}>{subheading}</Typography>

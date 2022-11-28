@@ -178,7 +178,7 @@ const ResponsiveAppBar = ({user}:Props) => {
               justifyContent: "center",
               alignItems: "center",
             }}
-            width="25%"
+            width="30%"
           >
             <CustomButton
               label={user !== null ? "Logout" : "Recruiter"}

@@ -39,7 +39,7 @@ const CustomButton = ({
           width: "100%",
           textDecoration: "none",
           backgroundColor: `${bgColor}`,
-          padding: "20px",
+          padding: "10px",
           borderRadius: "0px",
           border: `${border}`,
           borderLeft: `${borderLeft}`,
@@ -48,11 +48,12 @@ const CustomButton = ({
           
         }}
       >
-        <Button onClick={handleOnClick} fullWidth={fullWidth ? true : false}>
+        <Button onClick={handleOnClick} fullWidth={fullWidth ? true : false} sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
           <Typography
             fontWeight="bold"
             textTransform="capitalize"
             color={`${textColor}`}
+            variant="h6"
           >
             {label}
           </Typography>
@@ -64,22 +65,23 @@ const CustomButton = ({
     return (
       <Button
         onClick={handleOnClick}
-        
         sx={{
           width: `${width}`,
           backgroundColor: `${bgColor}`,
-          padding: "20px",
+          padding: "15px",
           borderRadius: "0px",
           border: `${border}`,
           borderLeft: `${borderLeft}`,
           boxShadow: `${shadow}`,
           margin: `${mx}`,
+          display:'flex', justifyContent:'center', alignItems:'center'
         }}
         fullWidth={fullWidth ? true : false}
       >
         <Typography
           fontWeight="bold"
           textTransform="capitalize"
+          variant="h6"
           color={`${textColor}`}
         >
           {label}
