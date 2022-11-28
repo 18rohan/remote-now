@@ -44,7 +44,7 @@ theme.typography.h5 = {
 
 theme.typography.h6 = {
     fontSize: "18px",
-    lineHeight: "50px",
+    lineHeight: "30px",
     fontWeight: "300",
     "@media(max-width:600px)": {
       fontSize: "14px",

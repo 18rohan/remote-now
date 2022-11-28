@@ -39,7 +39,7 @@ const CustomButton = ({
           width: "100%",
           textDecoration: "none",
           backgroundColor: `${bgColor}`,
-          padding: "10px",
+          padding: "12px",
           borderRadius: "0px",
           border: `${border}`,
           borderLeft: `${borderLeft}`,

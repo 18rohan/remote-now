@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { RootState } from "./store/store";
 import { theme } from "./theme";
+
 function App() {
   const user = useSelector((state: RootState) => state.user);
   return (
