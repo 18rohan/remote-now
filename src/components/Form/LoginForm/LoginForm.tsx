@@ -41,7 +41,7 @@ const LoginForm = () => {
      
     }
   return (
-    <Box display="flex" width="60%" height="40%" flexDirection="column" justifyContent="center" alignItems="center"  padding="8px">
+    <Box display="flex" width={{md:"60%", xs:'100%'}} height="40%" flexDirection="column" justifyContent="center" alignItems="center"  padding="8px">
             <InputField
               FieldName="email"
               label="Email id"

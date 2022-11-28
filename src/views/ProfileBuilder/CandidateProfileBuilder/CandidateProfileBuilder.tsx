@@ -158,15 +158,15 @@ const CandidateProfileBuilder = ({currentUserType}:Props) => {
              }
         </Stepper>
       </Stack>
-      <Box padding="150px">
+      <Box padding={{sm:"150px",xs:'200px 0 0 0'}} display={{xs:'block',sm:'block'}} margin-top="auto" margin-bottom="auto" height={{xs:'100vh'}} >
       <FormProvider {...methods}>
         <form>
           
-          <Box maxHeight="800px">{renderStepContent(currentStep)}</Box>
+          <Box maxHeight="800px" width="100%" paddingX={{xs:'10px'}}>{renderStepContent(currentStep)}</Box>
           <Box
             display="flex"
             flexDirection="row"
-            justifyContent="center"
+            justifyContent="space-around"
             alignItems="center"
             width="100%"
           >
@@ -178,7 +178,7 @@ const CandidateProfileBuilder = ({currentUserType}:Props) => {
                 border="2px solid black"
                 shadow="4"
                 mx="0px 20px 0px 0px"
-                width="300px"
+                fullWidth="true"
                 handleOnClick={() => PrevStep(currentStep)}
               />
             )}
@@ -189,7 +189,7 @@ const CandidateProfileBuilder = ({currentUserType}:Props) => {
                 textColor="white"
                 border="2px solid black"
                 shadow="4"
-                width="300px"
+                fullWidth="true"
                 handleOnClick={() => NextStep(currentStep)}
               />
             )}
@@ -200,7 +200,7 @@ const CandidateProfileBuilder = ({currentUserType}:Props) => {
                 textColor="white"
                 border="2px solid black"
                 shadow="4"
-                width="300px"
+                fullWidth="true"
                 handleOnClick={handleSubmit(onSubmit)}
               />
             )}

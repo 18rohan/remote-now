@@ -22,7 +22,7 @@ const CandidateSignupForm = () => {
     const navigate = useNavigate();
     
   return (
-    <Box display="flex" width="70%" height="50%" flexDirection="column" justifyContent="flex-start" alignItems="center"  padding="8px">
+    <Box display="flex" width={{sm:"70%",xs:'100%'}} height="50%" flexDirection="column" justifyContent="flex-start" alignItems="center"   padding="8px">
         
     <InputField
           FieldName="name"

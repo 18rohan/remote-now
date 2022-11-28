@@ -68,7 +68,7 @@ const CustomButton = ({
         sx={{
           width: `${width}`,
           backgroundColor: `${bgColor}`,
-          padding: "15px",
+          padding: "8px",
           borderRadius: "0px",
           border: `${border}`,
           borderLeft: `${borderLeft}`,

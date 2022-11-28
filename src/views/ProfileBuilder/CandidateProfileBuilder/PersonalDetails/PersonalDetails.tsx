@@ -13,7 +13,7 @@ const PersonalDetails = ({currentUser}:Props) => {
   
   return (
       <ColumnContainer width="100%">
-      <Grid container alignItems="center" spacing={1} sx={{marginBottom:'20px',display:'flex', justifyContent:'center'}}>
+      <Grid container alignItems="center" spacing={1} sx={{marginBottom:'20px',display:'flex', justifyContent:'center'}} padding={{xs:'12px',sm:'0px'}}>
         <Grid item sm={10} xs={12}>
           <Typography variant="h2" color="black">
             Personal Details
