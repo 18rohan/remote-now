@@ -178,7 +178,7 @@ const ResponsiveAppBar = ({user}:Props) => {
               justifyContent: "center",
               alignItems: "center",
             }}
-            width="30%"
+            width="40%"
           >
             <CustomButton
               label={user !== null ? "Logout" : "Recruiter"}
@@ -189,7 +189,7 @@ const ResponsiveAppBar = ({user}:Props) => {
               fullWidth="true"
             />
             <CustomButton
-              label={user !== null ? (user?.name) : "Candidates"}
+              label={user !== null ? (user?.name) : "Candidate"}
               bgColor="black"
               textColor="white"
               link={user !== null ? "/candidate/profile" : "signin/candidate"}

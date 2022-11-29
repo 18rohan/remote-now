@@ -38,7 +38,7 @@ const CustomButton = ({
           width: "100%",
           textDecoration: "none",
           backgroundColor: `${bgColor}`,
-          padding: "12px",
+          padding: "8px",
           borderRadius: "0px",
           border: `${border}`,
           borderLeft: `${borderLeft}`,
@@ -60,14 +60,13 @@ const CustomButton = ({
       </Link>
     );
   } else {
-    // console.log("Handle Click: ",handleOnClick)
     return (
       <Button
         onClick={handleOnClick}
         sx={{
           width: `${width}`,
           backgroundColor: `${bgColor}`,
-          padding: "8px",
+          padding: "8px 12px 8px 12px",
           borderRadius: "0px",
           border: `${border}`,
           borderLeft: `${borderLeft}`,
