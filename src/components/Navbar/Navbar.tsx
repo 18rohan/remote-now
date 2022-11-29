@@ -196,7 +196,7 @@ const ResponsiveAppBar = ({user}:Props) => {
               fullWidth="true"
             />
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{ mt: "45px", backgroundColor:'#B6E0CC' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{

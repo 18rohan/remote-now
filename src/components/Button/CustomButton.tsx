@@ -12,7 +12,6 @@ interface Props {
   shadow?: string;
   mx?: string;
   handleOnClick?: any;
-  
   link?: string;
   fullWidth?: string;
   width?: string;
@@ -50,7 +49,7 @@ const CustomButton = ({
       >
         <Button onClick={handleOnClick} fullWidth={fullWidth ? true : false} sx={{display:'flex', justifyContent:'center', alignItems:'center'}}>
           <Typography
-            fontWeight="bold"
+            fontWeight="500"
             textTransform="capitalize"
             color={`${textColor}`}
             variant="h6"
@@ -74,12 +73,14 @@ const CustomButton = ({
           borderLeft: `${borderLeft}`,
           boxShadow: `${shadow}`,
           margin: `${mx}`,
-          display:'flex', justifyContent:'center', alignItems:'center'
+          display:'flex', 
+          justifyContent:'center', 
+          alignItems:'center'
         }}
         fullWidth={fullWidth ? true : false}
       >
         <Typography
-          fontWeight="bold"
+          fontWeight="500"
           textTransform="capitalize"
           variant="h6"
           color={`${textColor}`}

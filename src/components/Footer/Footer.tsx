@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { Section } from "../../containers";
 import CenterBox from "../../containers/CenterBox";
@@ -28,28 +28,33 @@ const Footer = () => {
           <Typography variant="h4" color="white" fontWeight="100">
             remote-now
           </Typography>
+          <Grid container>
           <Box
-            display="flex"
-            justifyContent="space-around"
-            flexDirection="row"
-            alignItems="center"
-            width="40%"
+            
             padding="20px"
           >
+            <Grid item xs={12}>
             <Typography fontWeight="300" color="#E5E5E5" variant="subtitle1">
               Home
             </Typography>
-
+            </Grid>
+            <Grid item xs={12}>
             <Typography fontWeight="300" variant="subtitle1" color="#E5E5E5">
               Recruiter Login
             </Typography>
+            </Grid>
+            <Grid item xs={12}>
             <Typography fontWeight="300" variant="subtitle1" color="#E5E5E5">
               Recruiter Signup
             </Typography>
+            </Grid>
+            <Grid item xs={12}> 
             <Typography fontWeight="300" variant="subtitle1" color="#E5E5E5">
               Jobs
             </Typography>
+            </Grid>
           </Box>
+          </Grid>
           <Box
             display="flex"
             justifyContent="space-around"
