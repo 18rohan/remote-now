@@ -4,14 +4,15 @@ import { Box, GridProps } from "@mui/material";
 import { Navbar } from "../../components";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import Footer from "../../components/Footer";
 
 const style = {
   container: {
+    margin:'0px',
+    padding:'0px 0px 0px 0px',
+    
     bgcolor: {
       xs: "#E5E5E5",
-      margin:"0px",
-      display:'flex',
-      flexDirection:'column'
     },
   },
 };
@@ -25,10 +26,8 @@ const HomePageContainer: FC<Props | GridProps> = ({ children, ...props }) => {
   return (
     <Container container sx={style.container} {...props}>
       <Navbar user={user} />
-        <Box display="flex" flexDirection="column" >
         {children}
-        </Box>
-      {/* <Footer/> */}
+      <Footer/>
     </Container>
   );
 };

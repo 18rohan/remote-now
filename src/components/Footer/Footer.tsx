@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
     <Box
-      sx={{ backgroundColor: "#013220", width: "100%", height: "300px" }}
+      sx={{ backgroundColor: "#000", width: "100%", height: "300px" }}
       display="flex"
       justifyContent="center"
       alignItems="center"

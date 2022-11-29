@@ -24,6 +24,7 @@ theme.typography.h1 = {
     fontSize: "75px",
     lineHeight: "70px",
     fontWeight: "500",
+    fontFamily:'sans-serif',
   "@media (max-width:600px)": {
     fontSize: "3rem",
     lineHeight: "55px",

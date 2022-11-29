@@ -13,17 +13,12 @@ const ProfileOverview = () => {
     <Box
       width="100%"
       display="flex"
-      flexDirection="row"
-      justifyContent="center"
-      alignItems="center"
       padding="100px 0px 0px 0px"
       sx={{backgroundColor:'#E5E5E5'}}
     >
       {/* <Sidebar /> */}
       <HomeContainer backgroundColor="#E5E5E5"  >
-        {/* <Typography variant="h3" color="black">
-          User Profile
-        </Typography> */}
+        
         <ProfileOverviewCard/>
       </HomeContainer>
     </Box>
